@@ -12,7 +12,7 @@ const Dedicated = () => {
             height={272}
             width={686}
             alt='spiral-design'
-            className='absolute left-0 top-0 hidden lg:block -z-10'
+            className='absolute left-0 top-7 hidden lg:block -z-10'
           />
 
           {/* Left Column */}
