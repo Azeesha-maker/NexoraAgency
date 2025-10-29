@@ -26,7 +26,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className='col-span-12 xl:col-span-5 lg:col-span-6 md:col-span-12 text-center lg:text-left'>
             <div className='py-2 px-5 bg-primary/15 rounded-full w-fit mx-auto lg:mx-0'>
-              <p className='text-primary text-lg font-bold'>CREATIVE WEB AGENCY</p>
+              <p className='text-primary text-lg font-bold'>SIMRA AGENCY</p>
             </div>
             <h1 className='text-4xl md:text-5xl font-bold mt-6 leading-tight'>
               We Build Stunning & Scalable Websites
