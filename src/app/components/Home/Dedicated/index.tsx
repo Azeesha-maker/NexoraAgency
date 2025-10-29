@@ -6,7 +6,7 @@ const Dedicated = () => {
   return (
     <section className='relative bg-cover bg-center overflow-hidden'>
       <div className='container mx-auto max-w-7xl px-4'>
-        <div className='grid grid-cols-1 lg:grid-cols-12 gap-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-12 gap-5 items-center'>
           <Image
             src='/images/dedicated/spiral.svg'
             height={272}
@@ -14,37 +14,31 @@ const Dedicated = () => {
             alt='spiral-design'
             className='absolute left-0 top-0 hidden lg:block -z-10'
           />
+
           {/* Left Column */}
           <div className='col-span-12 lg:col-span-6 justify-self-center'>
             <Image
-              src='/images/dedicated/man.svg'
-              alt='man-icon'
-              width={416}
-              height={530}
+              src='/images/dedicated/man.jpeg'
+              alt='team-collaboration'
+              width={380}
+              height={480}
               className='mx-auto md:mx-0'
             />
           </div>
 
           {/* Right Column */}
           <div className='col-span-12 lg:col-span-6'>
-            <div className='relative'>
-              <Image
-                src='/images/dedicated/comma.svg'
-                alt='comma-image'
-                width={200}
-                height={106}
-                className='absolute -top-16 -left-32 hidden lg:block'
-              />
-            </div>
-            <h2 className='text-center -mr-1 lg:text-start lg:leading-20 leading-14'>
-              “Dedicated to help people’s design needs.”
+            <h2 className='text-center lg:text-start text-2xl lg:text-3xl font-semibold leading-snug'>
+              “We craft digital experiences that grow your brand.”
             </h2>
-            <p className='text-xl font-medium text-black/55 mt-5 text-center lg:text-start'>
-              Quis ipsum suspendisse ultrices gravida risus commodo viverra
-              maecenas accumsan lacus vel facilisis
+
+            <p className='text-base text-black/60 mt-4 text-center lg:text-start'>
+              From design to deployment, our team brings ideas to life through
+              creativity, code, and strategy.
             </p>
-            <h5 className='mt-12 lg:pl-32 relative lg:before:block before:hidden before:absolute before:bg-black before:h-0.5 before:w-24 before:left-0 before:bottom-1/2 text-center lg:text-start'>
-              Cathy Hills, CEO
+
+            <h5 className='mt-8 text-center lg:text-start font-medium text-black'>
+              Muhammad Saqib , CEO
             </h5>
           </div>
         </div>
@@ -52,4 +46,5 @@ const Dedicated = () => {
     </section>
   )
 }
+
 export default Dedicated
