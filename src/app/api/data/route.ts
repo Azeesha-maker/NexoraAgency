@@ -81,22 +81,31 @@ const WorkData: workdata[] = [
 // featured data
 const FeaturedData: featureddata[] = [
   {
-    heading: 'Brand design for a computer brand.',
+    heading: 'Modern Business Website for a Tech Startup',
     imgSrc: '/images/featured/feat1.jpg',
   },
   {
-    heading: 'Mobile app 3d wallpaper.',
+    heading: 'E-Commerce Platform with Secure Payment Gateway',
+    imgSrc: '/images/featured/feat5.png',
+  },
+  {
+    heading: 'Custom Portfolio Website for a Creative Designer',
+    imgSrc: '/images/featured/feat6.png',
+  },
+  {
+    heading: 'Mobile App UI/UX Design for a Food Delivery Service',
     imgSrc: '/images/featured/feat2.jpg',
   },
   {
-    heading: 'Brand design for a computer brand.',
-    imgSrc: '/images/featured/feat1.jpg',
+    heading: 'Real-Time Dashboard for Data Analytics Platform',
+    imgSrc: '/images/featured/feat4.png',
   },
   {
-    heading: 'Mobile app 3d wallpaper.',
-    imgSrc: '/images/featured/feat2.jpg',
+    heading: 'Landing Page Optimization for Marketing Campaign',
+    imgSrc: '/images/featured/feat7.png',
   },
 ]
+
 
 // plans data
 const PlansData = [
