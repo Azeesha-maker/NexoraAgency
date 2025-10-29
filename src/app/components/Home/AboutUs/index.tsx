@@ -7,7 +7,6 @@ import { Icon } from '@iconify/react'
 import AboutSkeleton from '../../Skeleton/AboutUs'
 
 const Aboutus = () => {
-  // fetch about data
   const [about, setAbout] = useState<aboutdata[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -28,21 +27,28 @@ const Aboutus = () => {
   }, [])
 
   return (
-    <section id='About' className=' bg-cover bg-center overflow-hidden'>
+    <section id='About' className='bg-cover bg-center overflow-hidden'>
       <div className='container mx-auto max-w-7xl px-4 relative z-1'>
-        <div className='p-12 bg-grey rounded-3xl'>
+        <div className='p-10 sm:p-12 bg-grey rounded-3xl relative'>
           <Image
             src='/images/aboutus/dots.svg'
             width={100}
             height={100}
             alt='dots-image'
-            className='absolute bottom-1 -left-20'
+            className='absolute bottom-1 -left-20 hidden sm:block'
           />
-          <p className='text-center text-primary text-lg tracking-widest uppercase mt-10'>
+
+          {/* Section Title */}
+          <p className='text-center text-primary text-base sm:text-lg tracking-widest uppercase mt-6'>
             about us
           </p>
-          <h2 className='text-center pb-12'>Know more about us.</h2>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-10'>
+          <h2 className='text-center pb-8 sm:pb-12 text-2xl sm:text-3xl font-semibold'>
+            Know more about us.
+          </h2>
+
+          {/* Responsive Grid */}
+          <div
+            className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mt-8'>
             {loading
               ? Array.from({ length: 3 }).map((_, index) => (
                   <AboutSkeleton key={index} />
@@ -50,8 +56,9 @@ const Aboutus = () => {
               : about.map((item, i) => (
                   <div
                     key={i}
-                    className='hover:bg-darkmode bg-white rounded-3xl p-8 shadow-xl group'>
-                    <h5 className='group-hover:text-white mb-5'>
+                    className='hover:bg-darkmode bg-white rounded-3xl p-6 sm:p-8 shadow-xl group 
+                               w-[90%] sm:w-[95%] mx-auto transition-all duration-300'>
+                    <h5 className='group-hover:text-white mb-4 text-lg sm:text-xl font-semibold text-center sm:text-left'>
                       {item.heading}
                     </h5>
                     <Image
@@ -59,19 +66,20 @@ const Aboutus = () => {
                       alt={item.imgSrc}
                       width={100}
                       height={100}
-                      className='mb-5'
+                      className='mb-5 mx-auto sm:mx-0'
                     />
-                    <p className='text-lg font-normal text-black group-hover:text-white mb-5'>
+                    <p className='text-sm sm:text-base font-normal text-black group-hover:text-white mb-5 text-center sm:text-left leading-relaxed'>
                       {item.paragraph}
                     </p>
                     <Link
                       href='#'
-                      className='text-18 font-semibold text-primary hover-underline flex items-center'>
+                      className='text-[15px] sm:text-[16px] font-semibold text-primary hover:underline flex items-center justify-center sm:justify-start'>
                       {item.link}
                       <Icon
                         icon='tabler:chevron-right'
-                        width='20'
-                        height='20'
+                        width='18'
+                        height='18'
+                        className='ml-1'
                       />
                     </Link>
                   </div>

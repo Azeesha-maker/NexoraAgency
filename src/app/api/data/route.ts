@@ -18,29 +18,31 @@ const headerData: HeaderItem[] = [
 ]
 
 // about data
+// about data
 const Aboutdata: aboutdata[] = [
   {
-    heading: 'About us.',
+    heading: 'Who We Are',
     imgSrc: '/images/aboutus/imgOne.svg',
     paragraph:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem',
-    link: 'Learn more',
+      'We are a modern web agency passionate about building creative and functional digital experiences. Our mission is to help businesses grow through clean design, strong development, and smart strategy.',
+    link: 'Discover More',
   },
   {
-    heading: 'Services.',
+    heading: 'What We Do',
     imgSrc: '/images/aboutus/imgTwo.svg',
     paragraph:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem',
-    link: 'Learn more',
+      'We specialize in web design, web app development, branding, and digital marketing  everything your brand needs to shine online and stand out from the crowd.',
+    link: 'Explore Services',
   },
   {
-    heading: 'Our Works.',
+    heading: 'Why Choose Us',
     imgSrc: '/images/aboutus/imgThree.svg',
     paragraph:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem',
-    link: 'Learn more',
+      'Our team blends creativity, technology, and strategy to deliver custom solutions that are fast, responsive, and result-driven  making your online presence unforgettable.',
+    link: 'Get Started',
   },
 ]
+
 
 // work-data
 const WorkData: workdata[] = [
