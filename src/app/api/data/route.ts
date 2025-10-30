@@ -108,50 +108,51 @@ const FeaturedData: featureddata[] = [
 
 
 // plans data
+
 const PlansData = [
   {
     heading: 'Startup',
     price: {
-      monthly: 19,
-      yearly: 190,
+      monthly: 199,
+      yearly: 200,
     },
-    user: 'per user',
+    user: 'per project',
     features: {
-      profiles: '5 Social Profiles',
-      posts: '5 Scheduled Posts Per Profile',
-      templates: '400+ Templated',
-      view: 'Calendar View',
-      support: '24/7 Support',
+      pages: 'Up to 5 Pages Website',
+      design: 'Modern & Responsive Design',
+      hosting: '1 Year Free Domain & Hosting Setup',
+      seo: 'Basic SEO Optimization',
+      support: 'Email Support',
     },
   },
   {
     heading: 'Business',
     price: {
-      monthly: 29,
-      yearly: 290,
+      monthly: 399,
+      yearly: 300,
     },
-    user: 'per user',
+    user: 'per project',
     features: {
-      profiles: '10 Social Profiles',
-      posts: '5 Scheduled Posts Per Profile',
-      templates: '600+ Templated',
-      view: 'Calendar View',
+      pages: 'Up to 10 Pages Website',
+      design: 'Custom Design with Animations',
+      hosting: 'Free Domain & Hosting Setup',
+      seo: 'Advanced SEO + Google Analytics',
       support: '24/7 VIP Support',
     },
   },
   {
     heading: 'Agency',
     price: {
-      monthly: 59,
-      yearly: 590,
+      monthly: 699,
+      yearly: 500,
     },
-    user: 'per user',
+    user: 'per project',
     features: {
-      profiles: '100 Social Profiles',
-      posts: '100 Scheduled Posts Per Profile',
-      templates: '800+ Templated',
-      view: 'Calendar View',
-      support: '24/7 VIP Support',
+      pages: 'Unlimited Pages + eCommerce Support',
+      design: 'Custom UI/UX + Figma to Code',
+      hosting: 'Premium Cloud Hosting + SSL',
+      seo: 'Full SEO Strategy + Speed Optimization',
+      support: 'Dedicated Project Manager',
     },
   },
 ]
