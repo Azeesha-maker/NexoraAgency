@@ -24,16 +24,16 @@ export default function ScrollToTop() {
   }, [])
 
   return (
-    <div className='fixed bottom-8 right-8 z-[999]'>
+    <div className='fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[999]'>
       {isVisible && (
-        <div className='flex items-center gap-3'>
-          {/* ✅ WhatsApp Button */}
+        <div className='flex flex-col sm:flex-row items-center gap-3'>
+          {/* ✅ WhatsApp Button - now visible on all screens */}
           <Link
-            href='https://wa.me/923236989128' // <-- replace with your WhatsApp number (format: 92 + number)
+            href='https://wa.me/923236989128' // <-- your WhatsApp number
             target='_blank'
-            className='hidden lg:flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full w-12 h-12 shadow-lg transition duration-300'
+            className='flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full w-12 h-12 shadow-lg transition duration-300'
             aria-label='Chat on WhatsApp'>
-            <Icon icon='mdi:whatsapp' width={26} height={26} />
+            <Icon icon='mdi:whatsapp' width={28} height={28} />
           </Link>
 
           {/* ✅ Scroll to Top Button */}
