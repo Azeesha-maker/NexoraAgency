@@ -160,54 +160,32 @@ const PlansData = [
 // testimonial data
 const TestimonialsData: testimonials[] = [
   {
-    name: 'Robert Fox',
-    profession: 'CEO, Parkview Int.Ltd',
+    name: 'Sarah Mitchell',
+    profession: 'Founder, Bloom Digital',
     comment:
-      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+      'The team completely transformed our outdated website into a sleek, high-performing platform. Their attention to detail and ability to understand our brand vision was outstanding. Our conversion rate has doubled since launch!',
     imgSrc: '/images/testimonial/user1.svg',
     rating: 5,
   },
   {
-    name: 'Leslie Alexander',
-    profession: 'CEO, Parkview Int.Ltd',
+    name: 'James Carter',
+    profession: 'Marketing Director, NexaTech',
     comment:
-      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+      'We needed a fast, modern web app for our SaaS product — and they delivered beyond expectations. Clean code, responsive UI, and an incredibly smooth user experience. Highly recommended!',
     imgSrc: '/images/testimonial/user2.svg',
-    rating: 4,
+    rating: 5,
   },
   {
-    name: 'Cody Fisher',
-    profession: 'CEO, Parkview Int.Ltd',
+    name: 'Emily Rodriguez',
+    profession: 'Owner, Urban Bakes Café',
     comment:
-      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+      'From the first call to the final handover, their process was seamless. The new website has given our bakery a real digital presence — customers love it, and it’s easy to manage too.',
     imgSrc: '/images/testimonial/user3.svg',
     rating: 4,
   },
-  {
-    name: 'Robert Fox',
-    profession: 'CEO, Parkview Int.Ltd',
-    comment:
-      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
-    imgSrc: '/images/testimonial/user1.svg',
-    rating: 4,
-  },
-  {
-    name: 'Leslie Alexander',
-    profession: 'CEO, Parkview Int.Ltd',
-    comment:
-      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
-    imgSrc: '/images/testimonial/user2.svg',
-    rating: 4,
-  },
-  {
-    name: 'Cody Fisher',
-    profession: 'CEO, Parkview Int.Ltd',
-    comment:
-      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
-    imgSrc: '/images/testimonial/user3.svg',
-    rating: 4,
-  },
+ 
 ]
+
 
 // artical data
 const ArticlesData: articles[] = [
@@ -264,39 +242,42 @@ const ArticlesData: articles[] = [
 // footer links data
 const FooterLinksData: footerlinks[] = [
   {
-    section: 'Menu',
+    section: 'Company',
     links: [
-      { label: 'About Us', href: '#About' },
-      { label: 'Team', href: '#Team' },
-      { label: 'FAQ', href: '#FAQ' },
-      { label: 'Blog', href: '#Blog' },
+      { label: 'About Us', href: '#about' },
+      { label: 'Our Team', href: '#team' },
+      { label: 'Careers', href: '#careers' },
+      { label: 'Contact', href: '#contact' },
     ],
   },
   {
-    section: 'Category',
+    section: 'Services',
     links: [
-      { label: 'Design', href: '/' },
-      { label: 'Mockup', href: '/' },
-      { label: 'View all', href: '/' },
-      { label: 'Log In', href: '/' },
+      { label: 'Web Design', href: '/' },
+      { label: 'Web Development', href: '/' },
+      { label: 'Branding & UI/UX', href: '/' },
+      { label: 'SEO & Marketing', href: '/' },
     ],
   },
   {
-    section: 'Pages',
+    section: 'Resources',
     links: [
-      { label: '404', href: '/' },
-      { label: 'Instructions', href: '/' },
+      { label: 'Blog', href: '#blog' },
+      { label: 'Case Studies', href: '/' },
+      { label: 'Client Reviews', href: '/' },
+      { label: 'FAQs', href: '#faq' },
+    ],
+  },
+  {
+    section: 'Legal',
+    links: [
+      { label: 'Privacy Policy', href: '/' },
+      { label: 'Terms & Conditions', href: '/' },
       { label: 'License', href: '/' },
     ],
   },
-  {
-    section: 'Others',
-    links: [
-      { label: 'Styleguide', href: '/' },
-      { label: 'Changelog', href: '/' },
-    ],
-  },
 ]
+
 
 export const GET = () => {
   return NextResponse.json({

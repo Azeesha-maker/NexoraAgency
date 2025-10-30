@@ -52,7 +52,7 @@ const Hero = () => {
               We Build Stunning & Scalable Websites
             </h1>
             <p className='text-gray-600 text-lg mt-4 max-w-xl mx-auto lg:mx-0'>
-              From sleek business sites to powerful web apps — we turn your vision into a digital experience that stands out.
+              From sleek business sites to powerful web apps  we turn your vision into a digital experience that stands out.
             </p>
             <Link href={'#'}>
               <button className='bg-primary text-white text-lg font-semibold py-4 px-10 rounded-full hover:bg-darkmode transition-all mt-10'>
