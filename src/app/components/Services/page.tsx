@@ -5,6 +5,21 @@ import { Icon } from '@iconify/react'
 import './styles.css'
 
 const services = [
+   {
+    id: 7,
+    title: 'Final Year Project (FYP) Development for Students 🎓',
+    description:
+      'We help IT, CS, and SE students develop complete Final Year Projects with proper documentation, database setup, and deployment — at student-friendly prices.',
+    features: [
+      'Custom project ideas',
+      'Full development (Frontend + Backend)',
+      'Database & documentation support',
+      'Free deployment guidance',
+    ],
+    tag: '50% Off for Students',
+    link: '/services/fyp-development',
+    cta: 'Build My FYP Now',
+  },
   {
     id: 1,
     title: 'Web Development',
@@ -18,6 +33,7 @@ const services = [
     link: '/services/web-development',
     cta: 'Build My Website',
   },
+  
   {
     id: 2,
     title: 'Mobile App Development',
@@ -85,21 +101,7 @@ const services = [
     link: '/services/modernization',
     cta: 'Modernize My Site',
   },
-    {
-    id: 7,
-    title: 'Final Year Project (FYP) Development for Students 🎓',
-    description:
-      'We help IT, CS, and SE students develop complete Final Year Projects with proper documentation, database setup, and deployment — at student-friendly prices.',
-    features: [
-      'Custom project ideas',
-      'Full development (Frontend + Backend)',
-      'Database & documentation support',
-      'Free deployment guidance',
-    ],
-    tag: '50% Off for Students',
-    link: '/services/fyp-development',
-    cta: 'Build My FYP Now',
-  },
+ 
 ]
 
 const faqs = [
