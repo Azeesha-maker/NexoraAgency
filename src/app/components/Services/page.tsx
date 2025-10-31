@@ -156,7 +156,7 @@ const testimonials = [
           </h2>
           <p className='text-gray-800 mt-3 max-w-2xl mx-auto'>
             From concept to launch, we deliver digital products that look great,
-            perform fast, and drive business growth.
+            perform fast, and drive business growth
           </p>
         </div>
 
