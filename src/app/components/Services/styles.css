@@ -1,0 +1,78 @@
+.fyp-card {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+/* 🔥 Glowing spinning border */
+.fyp-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    #7C3AED,
+    #C084FC,
+    #9333EA,
+    #7C3AED
+  );
+  padding: 2px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin 3s linear infinite;
+  z-index: 0;
+}
+
+/* ✅ Important: create a visible inner white layer */
+.fyp-card::after {
+  content: "";
+  position: absolute;
+  inset: 3px; /* same as padding thickness */
+  border-radius: inherit;
+  background: #fff;
+  z-index: 1;
+}
+
+/* Spin animation */
+@keyframes spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Bring content above */
+.fyp-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover styling */
+.fyp-card:hover {
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.fyp-card:hover::before {
+  animation-play-state: paused;
+}
+
+.fyp-card:hover h3,
+.fyp-card:hover p,
+.fyp-card:hover li ,
+.fyp-card:hover .linkA{
+  color: #000000;
+}
+
+.fyp-card:hover .linkA{
+  color: #6C63FF;
+  text-decoration: none;
+}
+

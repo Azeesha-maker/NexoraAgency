@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+ import { NextResponse } from 'next/server'
 
 import { HeaderItem } from '@/app/types/menu'
 import { aboutdata } from '@/app/types/aboutdata'
@@ -238,6 +238,8 @@ const ArticlesData: articles[] = [
     imgSrc: '/images/articles/article3.png',
   },
 ]
+
+
 
 // footer links data
 const FooterLinksData: footerlinks[] = [
