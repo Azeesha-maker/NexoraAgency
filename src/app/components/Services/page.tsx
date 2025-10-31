@@ -1,21 +1,20 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { Icon } from '@iconify/react'
-import './styles.css'
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { Icon } from '@iconify/react';
 
-const ServicesPage = () => {
-  const [activeFAQ, setActiveFAQ] = useState<number | null>(null)
-  const router = useRouter()
+export default function ServicesPage() {
+  const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
+  const router = useRouter();
 
   const services = [
     {
       id: 7,
-      title: 'Final Year Project (FYP) Development for Students 🎓',
+      title: 'Final Year Project (FYP) Development for Students',
       description:
-        'We help IT, CS, and SE students develop complete Final Year Projects with proper documentation, database setup, and deployment — at student-friendly prices.',
+        'We help IT, CS, and SE students build complete Final Year Projects with documentation, database, and free deployment — at student-friendly prices.',
       features: [
         'Custom project ideas',
         'Full development (Frontend + Backend)',
@@ -24,16 +23,17 @@ const ServicesPage = () => {
       ],
       tag: '50% Off for Students',
       cta: 'Build My FYP Now',
+      isFYP: true,
     },
     {
       id: 1,
       title: 'Web Development',
       description:
-        'We create fast, scalable, and SEO-friendly websites using modern frameworks like React, Next.js, and Node.js.',
+        'Fast, scalable, SEO-friendly websites using React, Next.js, and Node.js.',
       features: [
-        'Responsive & mobile-friendly design',
-        'Optimized for performance and SEO',
-        'Custom dashboard & CMS integration',
+        'Responsive & mobile-first design',
+        'Performance & SEO optimized',
+        'Custom CMS & dashboard',
       ],
       cta: 'Build My Website',
     },
@@ -41,23 +41,23 @@ const ServicesPage = () => {
       id: 2,
       title: 'Mobile App Development',
       description:
-        'We design and develop Android and iOS apps that deliver smooth user experiences and high performance.',
+        'Native-like Android & iOS apps with smooth UX and high performance.',
       features: [
-        'Cross-platform apps (React Native, Flutter)',
-        'API integration and cloud sync',
-        'App store optimization and support',
+        'React Native / Flutter',
+        'API & cloud integration',
+        'App store deployment',
       ],
-      cta: 'Start My App Project',
+      cta: 'Start My App',
     },
     {
       id: 3,
       title: 'UI/UX Design',
       description:
-        'Our UI/UX team crafts user-centered designs that boost engagement, retention, and brand identity.',
+        'User-centered designs that boost engagement and brand identity.',
       features: [
-        'Wireframing & Prototyping',
-        'Modern & intuitive design systems',
-        'User journey optimization',
+        'Wireframing & prototyping',
+        'Modern design systems',
+        'User journey mapping',
       ],
       cta: 'Design My Interface',
     },
@@ -65,24 +65,23 @@ const ServicesPage = () => {
       id: 4,
       title: 'Maintenance & Support',
       description:
-        'We ensure your digital products run smoothly with continuous updates, security monitoring, and backups.',
+        'Keep your app or site secure, fast, and always up to date.',
       features: [
-        '24/7 technical support',
-        'Regular updates & security checks',
-        'Backup and data recovery',
+        '24/7 monitoring',
+        'Monthly updates & backups',
+        'Bug fixes & support',
       ],
       cta: 'Get Support',
     },
     {
       id: 5,
-      title: 'Progressive Web App (PWA) Development',
+      title: 'Progressive Web App (PWA)',
       description:
-        'We build web apps that act like native apps — installable, offline-ready, and fast on any device.',
+        'Web apps that work offline, installable, and fast on any device.',
       features: [
-        'Offline mode & caching',
+        'Offline mode',
         'Push notifications',
-        'Installable home-screen app',
-        'Cross-device responsiveness',
+        'Home-screen install',
       ],
       cta: 'Launch My PWA',
     },
@@ -90,166 +89,176 @@ const ServicesPage = () => {
       id: 6,
       title: 'Website & App Modernization',
       description:
-        'Upgrade outdated systems with new frameworks, improved speed, security, and modern UI/UX.',
+        'Upgrade legacy systems with modern tech, speed, and design.',
       features: [
-        'Migration to React/Next.js',
-        'Speed & SEO optimization',
+        'Migrate to Next.js',
+        'Speed & SEO boost',
         'Responsive redesign',
-        'Security patches & maintenance',
       ],
       cta: 'Modernize My Site',
     },
-  ]
+  ];
 
   const faqs = [
     {
-      question: 'How long does it take to build a website?',
-      answer:
-        'Most projects take between 2–6 weeks depending on complexity, features, and design revisions.',
+      question: 'How long does a project take?',
+      answer: '2–6 weeks depending on scope and features.',
     },
     {
-      question: 'Do you offer ongoing maintenance?',
-      answer:
-        'Yes, we provide monthly maintenance packages to keep your site or app secure and up to date.',
+      question: 'Do you offer maintenance?',
+      answer: 'Yes, monthly packages with updates and support.',
     },
     {
-      question: 'Can I request a custom quote?',
-      answer:
-        'Absolutely! Use our contact form to describe your project and we’ll send you a tailored proposal.',
+      question: 'Can I get a custom quote?',
+      answer: 'Yes! Contact us with your idea.',
     },
-  ]
+  ];
 
   const testimonials = [
     {
       name: 'Sarah Khan',
       role: 'Startup Founder',
       feedback:
-        'They built our entire brand presence from website to mobile app — everything was on time, clean, and perfectly matched our vision.',
+        'They delivered our full brand — website, app, and design — on time and beyond expectations.',
     },
     {
       name: 'Ali Raza',
-      role: 'Marketing Manager',
+      role: 'Marketing Lead',
       feedback:
-        'Our company site loads twice as fast now and ranks higher on Google. The team’s support and communication are top-notch!',
+        'Site speed doubled. Google ranking improved. Support is excellent!',
     },
-  ]
+  ];
 
   return (
-    <section id='services' className='bg-white text-black py-16'>
-      <div className='container mx-auto max-w-7xl px-4 pt-20'>
-        {/* Title */}
-        <div className='text-center mb-12'>
-          <p className='text-primary uppercase tracking-widest text-sm sm:text-base'>
+    <section id="services" className="bg-gradient-to-b from-gray-50 to-white py-20">
+      <div className="container mx-auto max-w-7xl px-4">
+
+        {/* Hero Title */}
+        <div className="text-center mb-16">
+          <p className="text-blue-600 uppercase tracking-widest text-sm font-semibold">
             Our Services
           </p>
-          <h2 className='text-3xl sm:text-4xl font-semibold mt-2'>
-            Web & App Solutions That Scale With You
+          <h2 className="text-4xl sm:text-5xl font-bold mt-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+            Solutions That Scale With You
           </h2>
-          <p className='text-gray-800 mt-3 max-w-2xl mx-auto'>
-            From concept to launch, we deliver digital products that look great, perform fast, and drive business growth
+          <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
+            From idea to launch — fast, reliable, and built to grow.
           </p>
         </div>
 
-        {/* Service Cards */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+        {/* Service Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div
               key={service.id}
-              className='group bg-gray-190 hover:bg-darkmode transition-all duration-300 p-8 rounded-3xl shadow-md flex flex-col justify-between hover:shadow-xl relative'
+              className={`relative group rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden
+                ${service.isFYP ? 'fyp-card' : 'bg-white border border-gray-100'}`}
             >
+
+              {/* FYP Animated Border */}
+              {service.isFYP && (
+                <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 opacity-95"></div>
+                  <div className="absolute inset-0 border-4 border-transparent rounded-3xl animate-spin-slow-blue"></div>
+                </div>
+              )}
+
+              {/* Tag Badge */}
               {service.tag && (
-                <span className='absolute top-0 right-1 bg-red-500 text-white text-xs font-bold px-2 py-2 rounded-full shadow-md animate-pulse'>
+                <span className="absolute top-1 right-4 bg-white text-blue-600 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse z-10">
                   {service.tag}
                 </span>
               )}
 
-              <div>
-                <h3 className='text-xl font-semibold mb-3 group-hover:text-white transition'>
+              {/* Card Content */}
+              <div className="relative z-10">
+                <h3
+                  className={`text-2xl font-bold mb-3 transition-transform duration-300 group-hover:scale-105
+                    ${service.isFYP ? 'text-white' : 'text-gray-900'}`}
+                >
                   {service.title}
                 </h3>
-                <p className='mb-5 text-gray-700 group-hover:text-gray-200 transition'>
+
+                <p className={`mb-6 text-sm leading-relaxed ${service.isFYP ? 'text-blue-100' : 'text-gray-600'}`}>
                   {service.description}
                 </p>
-                <ul className='mb-5 list-disc pl-5 space-y-1'>
-                  {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className='text-gray-700 group-hover:text-gray-300 transition'
-                    >
+
+                <ul className="space-y-2 mb-8">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className={`flex items-center gap-2 text-sm ${service.isFYP ? 'text-blue-100' : 'text-gray-700'}`}>
+                      <Icon icon="tabler:check" className="text-blue-500" width="18" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-              </div>
 
-              <div className='mt-auto flex justify-between items-center'>
-                {/* CTA Button */}
-                <button
-                  onClick={() => router.push(`/contact`)}
-                  className='bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition'
-                >
-                  {service.cta}
-                </button>
+                <div className="flex flex-col sm:flex-row gap-3 justify-between items-center">
+                  <button
+                    onClick={() => router.push('/contact')}
+                    className={`w-full sm:w-auto px-5 py-3 rounded-full font-semibold transition-all hover:scale-105 shadow-md
+                      ${service.isFYP
+                        ? 'bg-white text-blue-700 hover:bg-gray-50'
+                        : 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800'
+                      }`}
+                  >
+                    {service.cta}
+                  </button>
 
-                {/* Simple Click Here link */}
-                <Link
-                  href='/contact'
-                  className='text-primary font-semibold hover:text-accent transition flex items-center group-hover:text-white'
-                >
-                  Click here
-                  <Icon icon='tabler:chevron-right' className='ml-1' width='18' height='18' />
-                </Link>
+                  <Link
+                    href="/contact"
+                    className={`flex items-center gap-1 text-sm font-medium transition-all hover:gap-2
+                      ${service.isFYP ? 'text-blue-100 hover:text-white' : 'text-blue-600 hover:text-blue-800'}`}
+                  >
+                    Click here
+                    <Icon icon="tabler:chevron-right" width="18" />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Testimonials */}
-        <div className='mt-20'>
-          <h3 className='text-center text-2xl font-semibold mb-8'>
-            What Our Clients Say
+        <div className="mt-24">
+          <h3 className="text-center text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+            What Clients Say
           </h3>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className='bg-gray-100 rounded-2xl p-6 shadow hover:shadow-lg transition'
-              >
-                <p className='italic mb-4 text-gray-700'>“{t.feedback}”</p>
-                <h5 className='font-semibold text-lg'>{t.name}</h5>
-                <p className='text-primary text-sm'>{t.role}</p>
+              <div key={i} className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-blue-50">
+                <Icon icon="tabler:quote" className="text-blue-600 mb-4" width="32" />
+                <p className="italic text-gray-700 mb-6 leading-relaxed">“{t.feedback}”</p>
+                <h5 className="font-bold text-lg">{t.name}</h5>
+                <p className="text-blue-600 text-sm">{t.role}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className='mt-20'>
-          <h3 className='text-center text-2xl font-semibold mb-8'>
-            Frequently Asked Questions
+        {/* FAQ */}
+        <div className="mt-24 max-w-4xl mx-auto">
+          <h3 className="text-center text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+            FAQs
           </h3>
-          <div className='max-w-3xl mx-auto'>
+          <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className='border-b py-4'>
+              <div key={i} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all border border-gray-100 overflow-hidden">
                 <button
-                  className='flex justify-between w-full text-left'
-                  onClick={() =>
-                    setActiveFAQ(activeFAQ === i ? null : i)
-                  }
+                  className="flex justify-between items-center w-full p-6 text-left font-medium text-lg text-gray-800"
+                  onClick={() => setActiveFAQ(activeFAQ === i ? null : i)}
+                  aria-expanded={activeFAQ === i}
                 >
-                  <span className='font-semibold text-lg'>{faq.question}</span>
+                  {faq.question}
                   <Icon
-                    icon={
-                      activeFAQ === i
-                        ? 'tabler:chevron-up'
-                        : 'tabler:chevron-down'
-                    }
-                    width='22'
-                    height='22'
+                    icon={activeFAQ === i ? 'tabler:chevron-up' : 'tabler:chevron-down'}
+                    width="24"
+                    className="text-blue-600 transition-transform"
                   />
                 </button>
                 {activeFAQ === i && (
-                  <p className='mt-3 text-gray-600'>{faq.answer}</p>
+                  <div className="px-6 pb-6">
+                    <p className="text-gray-600">{faq.answer}</p>
+                  </div>
                 )}
               </div>
             ))}
@@ -257,7 +266,5 @@ const ServicesPage = () => {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default ServicesPage

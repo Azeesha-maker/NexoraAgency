@@ -47,3 +47,26 @@
 .fyp-card:hover button {
   transform: scale(1.05);
 }
+
+
+/* Animated border for FYP card */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+  border-image: conic-gradient(from 0deg, #ec4899, #8b5cf6, #6366f1, #ec4899) 1;
+  border-style: solid;
+  border-width: 4px;
+}
+
+/* Optional: Glass morphism */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
