@@ -31,7 +31,7 @@ interface TeamMember {
   funFact: string;
 }
 
-/* ---------- 4 GIRLS (top) + 2 BOYS (bottom) ---------- */
+/* GIRLS – Top Row (4) */
 const girls: TeamMember[] = [
   {
     name: 'Azeesha Ali',
@@ -74,6 +74,7 @@ const girls: TeamMember[] = [
   },
 ];
 
+/* BOYS – Bottom Row (2) */
 const boys: TeamMember[] = [
   {
     name: 'Saqib Khan',
@@ -121,13 +122,13 @@ const values = [
 export default function TeamPage() {
   const [hovered, setHovered] = useState<number | null>(null);
 
-  const Card = (member: TeamMember, idx: number) => (
+  const TeamCard = (member: TeamMember, index: number) => (
     <div
-      key={idx}
+      key={index}
       className={`group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-        hovered === idx ? 'ring-2 ring-blue-500' : ''
+        hovered === index ? 'ring-2 ring-blue-500' : ''
       }`}
-      onMouseEnter={() => setHovered(idx)}
+      onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
     >
       <div className="relative aspect-square overflow-hidden">
@@ -147,9 +148,9 @@ export default function TeamPage() {
         <p className="mb-3 text-blue-600">{member.role}</p>
         <p className="mb-4 text-sm text-gray-600">{member.bio}</p>
         <div className="mb-4 flex flex-wrap gap-2">
-          {member.skills.slice(0, 3).map((s, i) => (
+          {member.skills.slice(0, 3).map((skill, i) => (
             <span key={i} className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
-              {s}
+              {skill}
             </span>
           ))}
           {member.skills.length > 3 && (
@@ -200,13 +201,13 @@ export default function TeamPage() {
           </div>
         </div>
 
-        {/* Blobs – responsive */}
+        {/* Responsive Blobs */}
         <div className="absolute left-0 top-20 h-64 w-64 animate-blob rounded-full bg-purple-300 opacity-60 blur-xl mix-blend-multiply md:-left-20 md:h-72 md:w-72" />
         <div className="animation-delay-2000 absolute right-0 top-40 h-64 w-64 animate-blob rounded-full bg-yellow-300 opacity-60 blur-xl mix-blend-multiply md:-right-20 md:h-72 md:w-72" />
         <div className="animation-delay-4000 absolute bottom-0 left-20 h-64 w-64 animate-blob rounded-full bg-pink-300 opacity-60 blur-xl mix-blend-multiply md:-bottom-20 md:left-40 md:h-72 md:w-72" />
       </section>
 
-      {/* ===== TEAM – 4 GIRLS TOP, 2 BOYS BOTTOM ===== */}
+      {/* ===== TEAM – 4 GIRLS + 2 BOYS (SAME SIZE) ===== */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
@@ -216,14 +217,15 @@ export default function TeamPage() {
             </p>
           </div>
 
-          {/* ---- GIRLS ROW ---- */}
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-center mb-12">
-            {girls.map((m, i) => Card(m, i))}
-          </div>
+          {/* Unified 4-column grid */}
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-center">
+            {/* Girls – 4 cards */}
+            {girls.map((m, i) => TeamCard(m, i))}
 
-          {/* ---- BOYS ROW ---- */}
-          <div className="grid gap-8 sm:grid-cols-2 justify-center">
-            {boys.map((m, i) => Card(m, girls.length + i))}
+            {/* Boys – 2 cards, centered */}
+            <div className="hidden lg:block" /> {/* Spacer */}
+            {boys.map((m, i) => TeamCard(m, girls.length + i))}
+            <div className="hidden lg:block" /> {/* Spacer */}
           </div>
         </div>
       </section>
@@ -270,7 +272,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* ===== VALUES ===== */}
+      {/* ===== CULTURE & VALUES ===== */}
       <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
