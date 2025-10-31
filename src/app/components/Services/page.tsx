@@ -149,7 +149,7 @@ const ServicesPage = () => {
           <h2 className='text-3xl sm:text-4xl font-semibold mt-2'>
             Web & App Solutions That Scale With You
           </h2>
-          <p className='text-gray-600 mt-3 max-w-2xl mx-auto'>
+          <p className='text-gray-800 mt-3 max-w-2xl mx-auto'>
             From concept to launch, we deliver digital products that look great,
             perform fast, and drive business growth.
           </p>
