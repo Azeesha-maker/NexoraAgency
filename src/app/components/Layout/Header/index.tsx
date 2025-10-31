@@ -51,7 +51,7 @@ const Header = () => {
   Services
 </Link>
 
-          <Link href='#projects' className='hover:text-primary transition'>
+          <Link href='/projects' className='hover:text-primary transition'>
             Projects
           </Link>
           <Link href='/team' className='hover:text-primary transition'>
@@ -95,7 +95,7 @@ const Header = () => {
   Services
 </Link>
 
-            <Link href='#projects' onClick={() => setNavbarOpen(false)}>Projects</Link>
+            <Link href='/projects' onClick={() => setNavbarOpen(false)}>Projects</Link>
             <Link href='/team' onClick={() => setNavbarOpen(false)}>Team</Link>
             <Link href='/contact' onClick={() => setNavbarOpen(false)}>Contact</Link>
           </nav>
