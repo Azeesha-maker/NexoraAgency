@@ -35,7 +35,7 @@ interface TeamMember {
 const girls: TeamMember[] = [
   {
     name: 'Azeesha Ali',
-    role: 'IT Roll Front-End',
+    role: 'IT Role , Front-End',
     photo: '/images/team/Azeesha.png',
     bio: 'Azeesha builds robust, user-centric web applications with a passion for clean code and security.',
     skills: ['React', 'Node.js', 'TypeScript', 'GraphQL'],
@@ -49,7 +49,7 @@ const girls: TeamMember[] = [
     photo: '/images/team/Anzalna.png',
     bio: 'Anzalna transforms complex ideas into intuitive, delightful digital experiences.',
     skills: ['Figma', 'User Research', 'Prototyping', 'Design Systems'],
-    linkedin: 'https://linkedin.com/in/priya-sharma',
+    linkedin: 'http://www.linkedin.com/in/anzalna-ansari-6990b7329',
     funFact: 'Believes every pixel has a purpose',
   },
   {
@@ -63,12 +63,12 @@ const girls: TeamMember[] = [
     funFact: 'Can deploy to production with one hand tied behind his back',
   },
   {
-    name: 'Simra Ahmed',
+    name: 'Simra Malik',
     role: 'Frontend Developer',
     photo: '/images/team/Simra.png',
     bio: 'Simra crafts pixel-perfect, accessible interfaces with a focus on performance and animation.',
     skills: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
-    linkedin: 'https://linkedin.com/in/simra-ahmed',
+    linkedin: 'https://www.linkedin.com/in/simra-malik-ab452138b ',
     github: 'https://github.com/simraa',
     funFact: 'Once animated an entire dashboard using only CSS — and it still works in IE11',
   },

@@ -47,36 +47,36 @@ const Aboutdata: aboutdata[] = [
 // work-data
 const WorkData: workdata[] = [
   {
-    profession: 'Co-founder',
-    name: 'John Doe',
-    imgSrc: '/images/wework/avatar.svg',
+    profession: 'IT Role , Front-End',
+    name: 'Azeesha Ali',
+    imgSrc: '/images/team/Azeesha.png',
   },
   {
-    profession: 'Co-founder',
-    name: 'John Doe',
-    imgSrc: '/images/wework/avatar3.svg',
+    profession: 'UI/UX Designer',
+    name: 'Anzalna',
+    imgSrc: '/images/team/Anzalna.png',
   },
   {
-    profession: 'Co-founder',
-    name: 'John Doe',
-    imgSrc: '/images/wework/avatar4.svg',
+    profession: 'DevOps Engineer',
+    name: 'Aniqa Khan',
+    imgSrc: '/images/team/Aniqa.png',
   },
   {
-    profession: 'Co-founder',
-    name: 'John Doe',
-    imgSrc: '/images/wework/avatar.svg',
+    profession: 'Frontend Developer',
+    name: 'Simra Ahmed',
+    imgSrc: '/images/team/Simra.png',
   },
   {
-    profession: 'Co-founder',
-    name: 'John Doe',
-    imgSrc: '/images/wework/avatar3.svg',
+    profession: 'Full Stack Developer',
+    name: 'Saqib Khan',
+    imgSrc: '/images/team/Saqib.png',
   },
   {
-    profession: 'Co-founder',
-    name: 'John Doe',
-    imgSrc: '/images/wework/avatar4.svg',
+    profession: 'Backend Engineer',
+    name: 'Muhammad Mursaleen',
+    imgSrc: '/images/team/Mursaleen.png',
   },
-]
+];
 
 // featured data
 const FeaturedData: featureddata[] = [
