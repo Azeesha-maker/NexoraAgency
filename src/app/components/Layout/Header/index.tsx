@@ -91,7 +91,7 @@ const Header = () => {
         <div className='p-6'>
           <Logo />
           <nav className='flex flex-col space-y-6 mt-10 text-lg'>
-           <Link href="/site/services" className="hover:text-primary transition">
+           <Link href="/services" className="hover:text-primary transition">
   Services
 </Link>
 
