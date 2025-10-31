@@ -159,11 +159,18 @@ const ServicesPage = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
           {services.map((service) => (
             <div
+            
   key={service.id}
-  className={`group bg-gray-50 hover:bg-darkmode transition-all duration-300 p-8 rounded-3xl shadow-md flex flex-col justify-between hover:shadow-xl ${
+  className={`group bg-gray-190 hover:bg-darkmode transition-all duration-300 p-8 rounded-3xl shadow-md flex flex-col justify-between hover:shadow-xl ${
     service.id === 7 ? 'fyp-card' : ''
   }`}
 >
+   {/* 🔥 50% OFF Badge */}
+  {service.tag && (
+    <span className='absolute bottom-3 right-2 bg-red-500 text-white text-xs font-bold px-2 py-2 rounded-full shadow-md animate-pulse'>
+      {service.tag}
+    </span>
+  )}
 
               <div>
                 <h3 className='text-xl font-semibold mb-3 group-hover:text-white transition'>
@@ -261,24 +268,7 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        {/* Contact Section */}
-        <div className='mt-24 text-center bg-gray-50 p-10 rounded-3xl shadow-inner'>
-          <h3 className='text-2xl font-semibold mb-4'>
-            Have a project in mind?
-          </h3>
-          <p className='text-gray-600 mb-6'>
-            Let’s discuss your vision and turn it into a digital reality.
-          </p>
-          <Link
-            href='/contact'
-            className='bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition'
-          >
-            Contact Us Now
-          </Link>
-          <div className='mt-6 text-sm text-gray-600'>
-             +92 300 1234567 |  contact@webappagency.com
-          </div>
-        </div>
+        
       </div>
     </section>
   )
