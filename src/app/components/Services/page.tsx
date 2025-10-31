@@ -10,138 +10,129 @@ const ServicesPage = () => {
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null)
   const router = useRouter()
 
-const services = [
-  {
-    id: 7,
-    title: 'Final Year Project (FYP) Development for Students 🎓',
-    slug: 'fyp-development',
-    description:
-      'We help IT, CS, and SE students develop complete Final Year Projects with proper documentation, database setup, and deployment — at student-friendly prices.',
-    features: [
-      'Custom project ideas',
-      'Full development (Frontend + Backend)',
-      'Database & documentation support',
-      'Free deployment guidance',
-    ],
-    tag: '50% Off for Students',
-    cta: 'Build My FYP Now',
-  },
-  {
-    id: 1,
-    title: 'Web Development',
-    slug: 'web-development',
-    description:
-      'We create fast, scalable, and SEO-friendly websites using modern frameworks like React, Next.js, and Node.js.',
-    features: [
-      'Responsive & mobile-friendly design',
-      'Optimized for performance and SEO',
-      'Custom dashboard & CMS integration',
-    ],
-    cta: 'Build My Website',
-  },
-  {
-    id: 2,
-    title: 'Mobile App Development',
-    slug: 'mobile-app-development',
-    description:
-      'We design and develop Android and iOS apps that deliver smooth user experiences and high performance.',
-    features: [
-      'Cross-platform apps (React Native, Flutter)',
-      'API integration and cloud sync',
-      'App store optimization and support',
-    ],
-    cta: 'Start My App Project',
-  },
-  {
-    id: 3,
-    title: 'UI/UX Design',
-    slug: 'ui-ux-design',
-    description:
-      'Our UI/UX team crafts user-centered designs that boost engagement, retention, and brand identity.',
-    features: [
-      'Wireframing & Prototyping',
-      'Modern & intuitive design systems',
-      'User journey optimization',
-    ],
-    cta: 'Design My Interface',
-  },
-  {
-    id: 4,
-    title: 'Maintenance & Support',
-    slug: 'maintenance-support',
-    description:
-      'We ensure your digital products run smoothly with continuous updates, security monitoring, and backups.',
-    features: [
-      '24/7 technical support',
-      'Regular updates & security checks',
-      'Backup and data recovery',
-    ],
-    cta: 'Get Support',
-  },
-  {
-    id: 5,
-    title: 'Progressive Web App (PWA) Development',
-    slug: 'pwa-development',
-    description:
-      'We build web apps that act like native apps — installable, offline-ready, and fast on any device.',
-    features: [
-      'Offline mode & caching',
-      'Push notifications',
-      'Installable home-screen app',
-      'Cross-device responsiveness',
-    ],
-    cta: 'Launch My PWA',
-  },
-  {
-    id: 6,
-    title: 'Website & App Modernization',
-    slug: 'website-modernization',
-    description:
-      'Upgrade outdated systems with new frameworks, improved speed, security, and modern UI/UX.',
-    features: [
-      'Migration to React/Next.js',
-      'Speed & SEO optimization',
-      'Responsive redesign',
-      'Security patches & maintenance',
-    ],
-    cta: 'Modernize My Site',
-  },
-]
+  const services = [
+    {
+      id: 7,
+      title: 'Final Year Project (FYP) Development for Students 🎓',
+      description:
+        'We help IT, CS, and SE students develop complete Final Year Projects with proper documentation, database setup, and deployment — at student-friendly prices.',
+      features: [
+        'Custom project ideas',
+        'Full development (Frontend + Backend)',
+        'Database & documentation support',
+        'Free deployment guidance',
+      ],
+      tag: '50% Off for Students',
+      cta: 'Build My FYP Now',
+    },
+    {
+      id: 1,
+      title: 'Web Development',
+      description:
+        'We create fast, scalable, and SEO-friendly websites using modern frameworks like React, Next.js, and Node.js.',
+      features: [
+        'Responsive & mobile-friendly design',
+        'Optimized for performance and SEO',
+        'Custom dashboard & CMS integration',
+      ],
+      cta: 'Build My Website',
+    },
+    {
+      id: 2,
+      title: 'Mobile App Development',
+      description:
+        'We design and develop Android and iOS apps that deliver smooth user experiences and high performance.',
+      features: [
+        'Cross-platform apps (React Native, Flutter)',
+        'API integration and cloud sync',
+        'App store optimization and support',
+      ],
+      cta: 'Start My App Project',
+    },
+    {
+      id: 3,
+      title: 'UI/UX Design',
+      description:
+        'Our UI/UX team crafts user-centered designs that boost engagement, retention, and brand identity.',
+      features: [
+        'Wireframing & Prototyping',
+        'Modern & intuitive design systems',
+        'User journey optimization',
+      ],
+      cta: 'Design My Interface',
+    },
+    {
+      id: 4,
+      title: 'Maintenance & Support',
+      description:
+        'We ensure your digital products run smoothly with continuous updates, security monitoring, and backups.',
+      features: [
+        '24/7 technical support',
+        'Regular updates & security checks',
+        'Backup and data recovery',
+      ],
+      cta: 'Get Support',
+    },
+    {
+      id: 5,
+      title: 'Progressive Web App (PWA) Development',
+      description:
+        'We build web apps that act like native apps — installable, offline-ready, and fast on any device.',
+      features: [
+        'Offline mode & caching',
+        'Push notifications',
+        'Installable home-screen app',
+        'Cross-device responsiveness',
+      ],
+      cta: 'Launch My PWA',
+    },
+    {
+      id: 6,
+      title: 'Website & App Modernization',
+      description:
+        'Upgrade outdated systems with new frameworks, improved speed, security, and modern UI/UX.',
+      features: [
+        'Migration to React/Next.js',
+        'Speed & SEO optimization',
+        'Responsive redesign',
+        'Security patches & maintenance',
+      ],
+      cta: 'Modernize My Site',
+    },
+  ]
 
-const faqs = [
-  {
-    question: 'How long does it take to build a website?',
-    answer:
-      'Most projects take between 2–6 weeks depending on complexity, features, and design revisions.',
-  },
-  {
-    question: 'Do you offer ongoing maintenance?',
-    answer:
-      'Yes, we provide monthly maintenance packages to keep your site or app secure and up to date.',
-  },
-  {
-    question: 'Can I request a custom quote?',
-    answer:
-      'Absolutely! Use our contact form to describe your project and we’ll send you a tailored proposal.',
-  },
-]
+  const faqs = [
+    {
+      question: 'How long does it take to build a website?',
+      answer:
+        'Most projects take between 2–6 weeks depending on complexity, features, and design revisions.',
+    },
+    {
+      question: 'Do you offer ongoing maintenance?',
+      answer:
+        'Yes, we provide monthly maintenance packages to keep your site or app secure and up to date.',
+    },
+    {
+      question: 'Can I request a custom quote?',
+      answer:
+        'Absolutely! Use our contact form to describe your project and we’ll send you a tailored proposal.',
+    },
+  ]
 
-const testimonials = [
-  {
-    name: 'Sarah Khan',
-    role: 'Startup Founder',
-    feedback:
-      'They built our entire brand presence from website to mobile app — everything was on time, clean, and perfectly matched our vision.',
-  },
-  {
-    name: 'Ali Raza',
-    role: 'Marketing Manager',
-    feedback:
-      'Our company site loads twice as fast now and ranks higher on Google. The team’s support and communication are top-notch!',
-  },
-]
-
-
+  const testimonials = [
+    {
+      name: 'Sarah Khan',
+      role: 'Startup Founder',
+      feedback:
+        'They built our entire brand presence from website to mobile app — everything was on time, clean, and perfectly matched our vision.',
+    },
+    {
+      name: 'Ali Raza',
+      role: 'Marketing Manager',
+      feedback:
+        'Our company site loads twice as fast now and ranks higher on Google. The team’s support and communication are top-notch!',
+    },
+  ]
 
   return (
     <section id='services' className='bg-white text-black py-16'>
@@ -155,8 +146,7 @@ const testimonials = [
             Web & App Solutions That Scale With You
           </h2>
           <p className='text-gray-800 mt-3 max-w-2xl mx-auto'>
-            From concept to launch, we deliver digital products that look great,
-            perform fast, and drive business growth
+            From concept to launch, we deliver digital products that look great, perform fast, and drive business growth
           </p>
         </div>
 
@@ -192,30 +182,14 @@ const testimonials = [
                 </ul>
               </div>
 
-              <div className='mt-auto flex justify-between items-center'>
-                {/* CTA Button */}
-               <button
-            onClick={() => router.push(`/contact?service=${service.slug}`)}
-            className='bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition'
-          >
-            {service.cta}
-          </button>
-
-                {/* Learn More (hide for id 7) */}
-                
-                  <Link
-                    href={`/contact?service=${service.slug}`}
-                    className='text-primary font-semibold hover:text-accent transition flex items-center group-hover:text-white linkA'
-                  >
-                    Click here
-                    <Icon
-                      icon='tabler:chevron-right'
-                      className='ml-1'
-                      width='18'
-                      height='18'
-                    />
-                  </Link>
-                
+              <div className='mt-auto'>
+                {/* CTA Button goes to simple /contact */}
+                <button
+                  onClick={() => router.push(`/contact`)}
+                  className='bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition w-full'
+                >
+                  {service.cta}
+                </button>
               </div>
             </div>
           ))}
