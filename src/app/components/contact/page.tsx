@@ -152,7 +152,7 @@ export default function ContactPage() {
                 target='_blank'
                 className='text-primary hover:underline flex items-center gap-1'
               >
-                <Icon icon='tabler:map-pin' width='18' /> 100 Smith Street, Collingwood VIC 3066
+                <Icon icon='tabler:map-pin' width='18' /> Hyderbad Pakistan 
               </Link>
             </div>
           </div>
