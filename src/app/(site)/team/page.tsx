@@ -31,11 +31,11 @@ interface TeamMember {
   funFact: string;
 }
 
-/* 2 Boys + 3 Girls */
-const teamMembers: TeamMember[] = [
+/* ---------- 4 GIRLS (top) + 2 BOYS (bottom) ---------- */
+const girls: TeamMember[] = [
   {
     name: 'Azeesha Ali',
-    role: 'Full Stack Developer',
+    role: 'IT Roll Front-End',
     photo: '/images/team/Azeesha.png',
     bio: 'Azeesha builds robust, user-centric web applications with a passion for clean code and security.',
     skills: ['React', 'Node.js', 'TypeScript', 'GraphQL'],
@@ -44,33 +44,13 @@ const teamMembers: TeamMember[] = [
     funFact: 'Can debug in her sleep and still wake up with a smile',
   },
   {
-    name: 'Anzalna ',
+    name: 'Anzalna',
     role: 'UI/UX Designer',
     photo: '/images/team/Anzalna.png',
     bio: 'Anzalna transforms complex ideas into intuitive, delightful digital experiences.',
     skills: ['Figma', 'User Research', 'Prototyping', 'Design Systems'],
     linkedin: 'https://linkedin.com/in/priya-sharma',
     funFact: 'Believes every pixel has a purpose',
-  },
-  {
-    name: 'Muhammad Mursaleen',
-    role: 'Backend Engineer',
-    photo: '/images/team/Mursaleen.png',
-    bio: 'Mursaleen architects scalable systems that power millions of daily interactions.',
-    skills: ['Go', 'Kubernetes', 'PostgreSQL', 'Microservices'],
-    linkedin: 'https://linkedin.com/in/rahul-mehta',
-    github: 'https://github.com/rahulm',
-    funFact: 'Once optimized a database at 3 AM… for fun',
-  },
-  {
-    name: 'Saqib Khan',
-    role: 'Frontend Developer',
-    photo: '/images/team/Saqib.png',
-    bio: 'Saqib crafts pixel-perfect, accessible interfaces with a focus on performance and animation.',
-    skills: ['Next.js', 'Tailwind', 'Framer Motion', 'A11y'],
-    linkedin: 'https://linkedin.com/in/sofia-khan',
-    github: 'https://github.com/sofiak',
-    funFact: 'Secretly a CSS animation wizard',
   },
   {
     name: 'Aniqa Khan',
@@ -82,29 +62,46 @@ const teamMembers: TeamMember[] = [
     github: 'https://github.com/arjunp',
     funFact: 'Can deploy to production with one hand tied behind his back',
   },
+  {
+    name: 'Simra Ahmed',
+    role: 'Frontend Developer',
+    photo: '/images/team/Simra.png',
+    bio: 'Simra crafts pixel-perfect, accessible interfaces with a focus on performance and animation.',
+    skills: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+    linkedin: 'https://linkedin.com/in/simra-ahmed',
+    github: 'https://github.com/simraa',
+    funFact: 'Once animated an entire dashboard using only CSS — and it still works in IE11',
+  },
+];
+
+const boys: TeamMember[] = [
+  {
+    name: 'Saqib Khan',
+    role: 'Full Stack Developer',
+    photo: '/images/team/Saqib.png',
+    bio: 'Saqib builds robust, user-centric web applications with a passion for clean code and security.',
+    skills: ['Next.js', 'Tailwind', 'Framer Motion', 'A11y'],
+    linkedin: 'https://linkedin.com/in/sofia-khan',
+    github: 'https://github.com/sofiak',
+    funFact: 'Secretly a CSS animation wizard',
+  },
+  {
+    name: 'Muhammad Mursaleen',
+    role: 'Backend Engineer',
+    photo: '/images/team/Mursaleen.png',
+    bio: 'Mursaleen architects scalable systems that power millions of daily interactions.',
+    skills: ['Go', 'Kubernetes', 'PostgreSQL', 'Microservices'],
+    linkedin: 'https://linkedin.com/in/rahul-mehta',
+    github: 'https://github.com/rahulm',
+    funFact: 'Once optimized a database at 3 AM… for fun',
+  },
 ];
 
 const departments = [
-  {
-    name: 'Management',
-    Icon: Users,
-    desc: 'Our leadership team guides strategy, vision, and ensures every project aligns with client goals.',
-  },
-  {
-    name: 'Development',
-    Icon: Code,
-    desc: 'Turns ideas into functional, secure, and scalable software solutions.',
-  },
-  {
-    name: 'Design',
-    Icon: Palette,
-    desc: 'Crafts beautiful, intuitive interfaces that users love.',
-  },
-  {
-    name: 'Marketing',
-    Icon: Megaphone,
-    desc: 'Connects solutions with the right audience through strategy and digital excellence.',
-  },
+  { name: 'Management', Icon: Users, desc: 'Our leadership team guides strategy, vision, and ensures every project aligns with client goals.' },
+  { name: 'Development', Icon: Code, desc: 'Turns ideas into functional, secure, and scalable software solutions.' },
+  { name: 'Design', Icon: Palette, desc: 'Crafts beautiful, intuitive interfaces that users love.' },
+  { name: 'Marketing', Icon: Megaphone, desc: 'Connects solutions with the right audience through strategy and digital excellence.' },
 ];
 
 const achievements = [
@@ -124,12 +121,65 @@ const values = [
 export default function TeamPage() {
   const [hovered, setHovered] = useState<number | null>(null);
 
+  const Card = (member: TeamMember, idx: number) => (
+    <div
+      key={idx}
+      className={`group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+        hovered === idx ? 'ring-2 ring-blue-500' : ''
+      }`}
+      onMouseEnter={() => setHovered(idx)}
+      onMouseLeave={() => setHovered(null)}
+    >
+      <div className="relative aspect-square overflow-hidden">
+        <Image
+          src={member.photo}
+          alt={member.name}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+        <p className="absolute bottom-4 left-4 right-4 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
+          {member.funFact}
+        </p>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+        <p className="mb-3 text-blue-600">{member.role}</p>
+        <p className="mb-4 text-sm text-gray-600">{member.bio}</p>
+        <div className="mb-4 flex flex-wrap gap-2">
+          {member.skills.slice(0, 3).map((s, i) => (
+            <span key={i} className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+              {s}
+            </span>
+          ))}
+          {member.skills.length > 3 && (
+            <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-500">
+              +{member.skills.length - 3}
+            </span>
+          )}
+        </div>
+        <div className="flex gap-3">
+          {member.linkedin && (
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 transition hover:text-blue-600">
+              <Linkedin className="h-5 w-5" />
+            </a>
+          )}
+          {member.github && (
+            <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 transition hover:text-gray-900">
+              <Github className="h-5 w-5" />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <>
-      {/* ===== HERO / INTRODUCTION ===== */}
+      {/* ===== HERO ===== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] opacity-40" />
-        <div className="container relative z-10 px-4 py-24 text-center">
+        <div className="container mx-auto px-4 py-24 text-center relative z-10">
           <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
             Meet the People Behind Our Success
           </h1>
@@ -150,14 +200,15 @@ export default function TeamPage() {
           </div>
         </div>
 
-        <div className="absolute -left-20 top-20 h-72 w-72 animate-blob rounded-full bg-purple-300 opacity-70 blur-xl mix-blend-multiply" />
-        <div className="animation-delay-2000 absolute -right-20 top-40 h-72 w-72 animate-blob rounded-full bg-yellow-300 opacity-70 blur-xl mix-blend-multiply" />
-        <div className="animation-delay-4000 absolute -bottom-20 left-40 h-72 w-72 animate-blob rounded-full bg-pink-300 opacity-70 blur-xl mix-blend-multiply" />
+        {/* Blobs – responsive */}
+        <div className="absolute left-0 top-20 h-64 w-64 animate-blob rounded-full bg-purple-300 opacity-60 blur-xl mix-blend-multiply md:-left-20 md:h-72 md:w-72" />
+        <div className="animation-delay-2000 absolute right-0 top-40 h-64 w-64 animate-blob rounded-full bg-yellow-300 opacity-60 blur-xl mix-blend-multiply md:-right-20 md:h-72 md:w-72" />
+        <div className="animation-delay-4000 absolute bottom-0 left-20 h-64 w-64 animate-blob rounded-full bg-pink-300 opacity-60 blur-xl mix-blend-multiply md:-bottom-20 md:left-40 md:h-72 md:w-72" />
       </section>
 
-      {/* ===== TEAM MEMBER PROFILES ===== */}
+      {/* ===== TEAM – 4 GIRLS TOP, 2 BOYS BOTTOM ===== */}
       <section className="py-20 bg-white">
-        <div className="container px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-900">Our Amazing Team</h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
@@ -165,96 +216,31 @@ export default function TeamPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {teamMembers.map((member, idx) => (
-              <div
-                key={idx}
-                className={`group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-                  hovered === idx ? 'ring-2 ring-blue-500' : ''
-                }`}
-                onMouseEnter={() => setHovered(idx)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                  <p className="absolute bottom-4 left-4 right-4 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
-                    {member.funFact}
-                  </p>
-                </div>
+          {/* ---- GIRLS ROW ---- */}
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-center mb-12">
+            {girls.map((m, i) => Card(m, i))}
+          </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                  <p className="mb-3 text-blue-600">{member.role}</p>
-                  <p className="mb-4 text-sm text-gray-600">{member.bio}</p>
-
-                  <div className="mb-4 flex flex-wrap gap-2">
-                    {member.skills.slice(0, 3).map((s, i) => (
-                      <span
-                        key={i}
-                        className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                    {member.skills.length > 3 && (
-                      <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-500">
-                        +{member.skills.length - 3}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex gap-3">
-                    {member.linkedin && (
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 transition hover:text-blue-600"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                    )}
-                    {member.github && (
-                      <a
-                        href={member.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 transition hover:text-gray-900"
-                      >
-                        <Github className="h-5 w-5" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* ---- BOYS ROW ---- */}
+          <div className="grid gap-8 sm:grid-cols-2 justify-center">
+            {boys.map((m, i) => Card(m, girls.length + i))}
           </div>
         </div>
       </section>
 
-      {/* ===== DEPARTMENT OVERVIEW ===== */}
+      {/* ===== DEPARTMENTS ===== */}
       <section className="py-20 bg-gray-50">
-        <div className="container px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-900">How We Work</h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
               Our team is organized into specialized departments that work seamlessly together.
             </p>
           </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 justify-center">
             {departments.map(({ name, Icon, desc }, i) => (
-              <div
-                key={i}
-                className="rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-lg"
-              >
-                <Icon className="mb-4 h-12 w-12 text-blue-600" />
+              <div key={i} className="rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-lg text-center">
+                <Icon className="mx-auto mb-4 h-12 w-12 text-blue-600" />
                 <h3 className="mb-2 text-xl font-bold text-gray-900">{name}</h3>
                 <p className="text-sm text-gray-600">{desc}</p>
               </div>
@@ -265,15 +251,14 @@ export default function TeamPage() {
 
       {/* ===== ACHIEVEMENTS ===== */}
       <section className="py-20 bg-white">
-        <div className="container px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-900">Our Achievements</h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
               Proven track record of excellence and client success.
             </p>
           </div>
-
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 justify-center">
             {achievements.map(({ Icon, value, label }, i) => (
               <div key={i} className="text-center">
                 <Icon className="mx-auto mb-3 h-12 w-12 text-blue-600 md:h-16 md:w-16" />
@@ -285,23 +270,19 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* ===== CULTURE & VALUES ===== */}
+      {/* ===== VALUES ===== */}
       <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="container px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-900">Our Culture & Values</h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
               We believe in collaboration, creativity, and continuous learning.
             </p>
           </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 justify-center">
             {values.map(({ Icon, title, desc }, i) => (
-              <div
-                key={i}
-                className="rounded-xl bg-white p-6 shadow-lg transition-shadow hover:shadow-xl"
-              >
-                <Icon className="mb-4 h-12 w-12 text-blue-600" />
+              <div key={i} className="rounded-xl bg-white p-6 shadow-lg transition-shadow hover:shadow-xl text-center">
+                <Icon className="mx-auto mb-4 h-12 w-12 text-blue-600" />
                 <h3 className="mb-2 text-xl font-bold text-gray-900">{title}</h3>
                 <p className="text-sm text-gray-600">{desc}</p>
               </div>
@@ -332,10 +313,10 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* ===== CALL TO ACTION ===== */}
+      {/* ===== CTA ===== */}
       <section className="py-20 bg-gray-900 text-white">
-        <div className="container px-4 text-center">
-          <h2 className="mb-6 text-4xl font-bold">Ready to Work With Us?</h2>
+        <div className="container mx-auto px-4 max-w-7xl text-center">
+          <h2 className="mb-6 text-4xl font-bold text-amber-50">Ready to Work With Us?</h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
             Whether you're looking to join our team or need expert solutions for your business, we're here to help you succeed.
           </p>
