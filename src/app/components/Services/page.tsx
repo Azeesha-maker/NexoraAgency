@@ -1,13 +1,20 @@
 'use client'
+
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Icon } from '@iconify/react'
 import './styles.css'
 
+const ServicesPage = () => {
+  const [activeFAQ, setActiveFAQ] = useState<number | null>(null)
+  const router = useRouter()
+
 const services = [
-   {
+  {
     id: 7,
     title: 'Final Year Project (FYP) Development for Students 🎓',
+    slug: 'fyp-development',
     description:
       'We help IT, CS, and SE students develop complete Final Year Projects with proper documentation, database setup, and deployment — at student-friendly prices.',
     features: [
@@ -17,12 +24,12 @@ const services = [
       'Free deployment guidance',
     ],
     tag: '50% Off for Students',
-    link: '/services/fyp-development',
     cta: 'Build My FYP Now',
   },
   {
     id: 1,
     title: 'Web Development',
+    slug: 'web-development',
     description:
       'We create fast, scalable, and SEO-friendly websites using modern frameworks like React, Next.js, and Node.js.',
     features: [
@@ -30,13 +37,12 @@ const services = [
       'Optimized for performance and SEO',
       'Custom dashboard & CMS integration',
     ],
-    link: '/services/web-development',
     cta: 'Build My Website',
   },
-  
   {
     id: 2,
     title: 'Mobile App Development',
+    slug: 'mobile-app-development',
     description:
       'We design and develop Android and iOS apps that deliver smooth user experiences and high performance.',
     features: [
@@ -44,12 +50,12 @@ const services = [
       'API integration and cloud sync',
       'App store optimization and support',
     ],
-    link: '/services/mobile-apps',
     cta: 'Start My App Project',
   },
   {
     id: 3,
     title: 'UI/UX Design',
+    slug: 'ui-ux-design',
     description:
       'Our UI/UX team crafts user-centered designs that boost engagement, retention, and brand identity.',
     features: [
@@ -57,12 +63,12 @@ const services = [
       'Modern & intuitive design systems',
       'User journey optimization',
     ],
-    link: '/services/ui-ux-design',
     cta: 'Design My Interface',
   },
   {
     id: 4,
     title: 'Maintenance & Support',
+    slug: 'maintenance-support',
     description:
       'We ensure your digital products run smoothly with continuous updates, security monitoring, and backups.',
     features: [
@@ -70,26 +76,26 @@ const services = [
       'Regular updates & security checks',
       'Backup and data recovery',
     ],
-    link: '/services/maintenance',
     cta: 'Get Support',
   },
   {
-  id: 5,
-  title: 'Progressive Web App (PWA) Development',
-  description:
-    'We build web apps that act like native apps — installable, offline-ready, and fast on any device.',
-  features: [
-    'Offline mode & caching',
-    'Push notifications',
-    'Installable home-screen app',
-    'Cross-device responsiveness',
-  ],
-  link: '/services/pwa-development',
-  cta: 'Launch My PWA',
-},
- {
+    id: 5,
+    title: 'Progressive Web App (PWA) Development',
+    slug: 'pwa-development',
+    description:
+      'We build web apps that act like native apps — installable, offline-ready, and fast on any device.',
+    features: [
+      'Offline mode & caching',
+      'Push notifications',
+      'Installable home-screen app',
+      'Cross-device responsiveness',
+    ],
+    cta: 'Launch My PWA',
+  },
+  {
     id: 6,
     title: 'Website & App Modernization',
+    slug: 'website-modernization',
     description:
       'Upgrade outdated systems with new frameworks, improved speed, security, and modern UI/UX.',
     features: [
@@ -98,10 +104,8 @@ const services = [
       'Responsive redesign',
       'Security patches & maintenance',
     ],
-    link: '/services/modernization',
     cta: 'Modernize My Site',
   },
- 
 ]
 
 const faqs = [
@@ -137,8 +141,7 @@ const testimonials = [
   },
 ]
 
-const ServicesPage = () => {
-  const [activeFAQ, setActiveFAQ] = useState<number | null>(null)
+
 
   return (
     <section id='services' className='bg-white text-black py-16'>
@@ -161,18 +164,14 @@ const ServicesPage = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
           {services.map((service) => (
             <div
-            
-  key={service.id}
-  className={`group bg-gray-190 hover:bg-darkmode transition-all duration-300 p-8 rounded-3xl shadow-md flex flex-col justify-between hover:shadow-xl ${
-    service.id === 7 ? 'fyp-card' : ''
-  }`}
->
-   {/* 🔥 50% OFF Badge */}
-  {service.tag && (
-    <span className='absolute bottom-3 right-2 bg-red-500 text-white text-xs font-bold px-2 py-2 rounded-full shadow-md animate-pulse'>
-      {service.tag}
-    </span>
-  )}
+              key={service.id}
+              className='group bg-gray-190 hover:bg-darkmode transition-all duration-300 p-8 rounded-3xl shadow-md flex flex-col justify-between hover:shadow-xl relative'
+            >
+              {service.tag && (
+                <span className='absolute top-0 right-1 bg-red-500 text-white text-xs font-bold px-2 py-2 rounded-full shadow-md animate-pulse'>
+                  {service.tag}
+                </span>
+              )}
 
               <div>
                 <h3 className='text-xl font-semibold mb-3 group-hover:text-white transition'>
@@ -194,21 +193,29 @@ const ServicesPage = () => {
               </div>
 
               <div className='mt-auto flex justify-between items-center'>
-                <Link
-                  href={service.link}
-                  className='text-primary font-semibold hover:text-accent transition flex items-center group-hover:text-white linkA'
-                >
-                  Learn More
-                  <Icon
-                    icon='tabler:chevron-right'
-                    className='ml-1'
-                    width='18'
-                    height='18'
-                  />
-                </Link>
-                <button className='bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition'>
-                  {service.cta}
-                </button>
+                {/* CTA Button */}
+               <button
+            onClick={() => router.push(`/contact?service=${service.slug}`)}
+            className='bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition'
+          >
+            {service.cta}
+          </button>
+
+                {/* Learn More (hide for id 7) */}
+                
+                  <Link
+                    href={`/contact?service=${service.slug}`}
+                    className='text-primary font-semibold hover:text-accent transition flex items-center group-hover:text-white linkA'
+                  >
+                    Click here
+                    <Icon
+                      icon='tabler:chevron-right'
+                      className='ml-1'
+                      width='18'
+                      height='18'
+                    />
+                  </Link>
+                
               </div>
             </div>
           ))}
@@ -225,9 +232,7 @@ const ServicesPage = () => {
                 key={i}
                 className='bg-gray-100 rounded-2xl p-6 shadow hover:shadow-lg transition'
               >
-                <p className='italic mb-4 text-gray-700'>
-                  “{t.feedback}”
-                </p>
+                <p className='italic mb-4 text-gray-700'>“{t.feedback}”</p>
                 <h5 className='font-semibold text-lg'>{t.name}</h5>
                 <p className='text-primary text-sm'>{t.role}</p>
               </div>
@@ -249,9 +254,7 @@ const ServicesPage = () => {
                     setActiveFAQ(activeFAQ === i ? null : i)
                   }
                 >
-                  <span className='font-semibold text-lg'>
-                    {faq.question}
-                  </span>
+                  <span className='font-semibold text-lg'>{faq.question}</span>
                   <Icon
                     icon={
                       activeFAQ === i
@@ -269,8 +272,6 @@ const ServicesPage = () => {
             ))}
           </div>
         </div>
-
-        
       </div>
     </section>
   )

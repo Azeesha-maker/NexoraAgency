@@ -1,8 +1,50 @@
 'use client'
+
+import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 
+// Map slugs to display names
+const serviceMap: Record<string, string> = {
+  'fyp-development': 'Final Year Project (FYP) Development for Students 🎓',
+  'web-development': 'Web Development',
+  'mobile-app-development': 'Mobile App Development',
+  'ui-ux-design': 'UI/UX Design',
+  'maintenance-support': 'Maintenance & Support',
+  'pwa-development': 'Progressive Web App (PWA) Development',
+  'website-modernization': 'Website & App Modernization',
+}
+
+// Map slugs to form fields
+const serviceFields: Record<string, string[]> = {
+  'fyp-development': ['Project idea', 'Deadline', 'Tech Stack', 'Budget'],
+  'web-development': ['Website type', 'Pages required', 'SEO needs', 'CMS'],
+  'mobile-app-development': ['App platform', 'Features', 'Deadline', 'Budget'],
+  'ui-ux-design': ['Project type', 'Design inspiration', 'Deadline'],
+  'maintenance-support': ['Current issues', 'System type', 'Frequency'],
+  'pwa-development': ['App type', 'Offline mode needed', 'Features'],
+  'website-modernization': ['Current system', 'New tech', 'Deadline'],
+}
+
 export default function ContactPage() {
+  const searchParams = useSearchParams()
+  const slug = searchParams.get('service') || ''
+  const serviceDisplayName = serviceMap[slug] || ''
+  const fields = serviceFields[slug] || ['General message']
+
+  const [formData, setFormData] = useState<Record<string, string>>({})
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('Form submitted:', formData)
+    alert('Your request has been submitted!')
+  }
+
   return (
     <section className='bg-white text-gray-900 py-20'>
       <div className='max-w-7xl mx-auto px-6 lg:px-8'>
@@ -13,54 +55,60 @@ export default function ContactPage() {
             Got any questions about a project or scaling your product? We're here to help. 
             Chat with our friendly team 24/7 — we’ll get back to you in less than 5 minutes.
           </p>
+          {slug && (
+            <p className='text-primary mt-2 font-semibold'>
+              You're contacting us about: <span className='text-black'>{serviceDisplayName}</span>
+            </p>
+          )}
         </div>
 
         {/* Two-column layout */}
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
-          
           {/* Left: Contact Form */}
-          <form className='bg-gray-50 rounded-3xl p-8 shadow-sm'>
+          <form
+            className='bg-gray-50 rounded-3xl p-8 shadow-sm'
+            onSubmit={handleSubmit}
+          >
+            {fields.map((field, idx) => (
+              <div key={idx} className='mb-4'>
+                <label className='block font-medium mb-1'>{field}</label>
+                <input
+                  type='text'
+                  value={formData[field] || ''}
+                  onChange={(e) => handleChange(field, e.target.value)}
+                  placeholder={field}
+                  className='border border-gray-300 rounded-xl p-3 w-full focus:ring-2 focus:ring-primary focus:outline-none'
+                  required
+                />
+              </div>
+            ))}
+
+            {/* Common fields */}
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6'>
               <input
                 type='text'
                 placeholder='First name'
                 className='border border-gray-300 rounded-xl p-3 w-full focus:ring-2 focus:ring-primary focus:outline-none'
+                required
               />
               <input
                 type='text'
                 placeholder='Last name'
                 className='border border-gray-300 rounded-xl p-3 w-full focus:ring-2 focus:ring-primary focus:outline-none'
+                required
               />
             </div>
             <input
               type='email'
               placeholder='Email'
               className='border border-gray-300 rounded-xl p-3 w-full mb-6 focus:ring-2 focus:ring-primary focus:outline-none'
+              required
             />
             <input
               type='tel'
               placeholder='Phone number'
               className='border border-gray-300 rounded-xl p-3 w-full mb-6 focus:ring-2 focus:ring-primary focus:outline-none'
             />
-            <textarea
-              placeholder='Leave us a message...'
-              rows={4}
-              className='border border-gray-300 rounded-xl p-3 w-full mb-6 focus:ring-2 focus:ring-primary focus:outline-none'
-            ></textarea>
-
-            <div className='mb-6'>
-              <p className='font-medium mb-3'>Services</p>
-              <div className='grid grid-cols-2 sm:grid-cols-3 gap-3'>
-                {['Website design', 'UX design', 'User research', 'Content creation', 'Strategy & consulting', 'Other'].map(
-                  (item, idx) => (
-                    <label key={idx} className='flex items-center gap-2 text-gray-600'>
-                      <input type='checkbox' className='accent-primary w-4 h-4' />
-                      {item}
-                    </label>
-                  )
-                )}
-              </div>
-            </div>
 
             <button
               type='submit'

@@ -5,9 +5,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { footerlinks } from '@/app/types/footerlinks'
 
-const footer = () => {
+const Footer = () => {
   // fetch data
-
   const [footerlinks, setFooterLinks] = useState<footerlinks[]>([])
 
   useEffect(() => {
@@ -66,9 +65,10 @@ const footer = () => {
               </div>
             </div>
           </div>
-          {/* CLOUMN-2/3 */}
+
+          {/* COLUMN-2/3 */}
           {footerlinks.map((item, i) => (
-            <div key={i} className='group relative col-span-2'>
+            <div key={i} className='footer-group relative col-span-2'>
               <p className='text-white text-xl font-extrabold mb-9'>
                 {item.section}
               </p>
@@ -77,7 +77,8 @@ const footer = () => {
                   <li key={i} className='mb-5'>
                     <Link
                       href={`${item.href}`}
-                      className='text-white text-lg font-normal mb-6 space-links hover:text-white/60 hover:underline'>
+                      className='text-white text-lg font-normal mb-6 space-links hover:text-white/60 hover:underline'
+                    >
                       {item.label}
                     </Link>
                   </li>
@@ -87,31 +88,32 @@ const footer = () => {
           ))}
         </div>
       </div>
+
       {/* All Rights Reserved */}
       <div className='mx-auto max-w-2xl lg:max-w-7xl'>
         <div className='pt-5 pb-5 px-4 sm:px-6 lg:px-4 border-t border-white/30'>
           <div className='mt-4 grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 xl:gap-x-8'>
             <div>
               <p className='text-center md:text-start text-white text-lg'>
-                @2025 - All Rights Reserved by{' '}
+                ©2025 - All Rights Reserved by{' '}
                 <Link
                   href='https://getnextjstemplates.com/'
                   target='_blank'
-                  className='hover:text-white/60 hover:underline'>
-                  {' '}
-                  NexoraAgecny.com
+                  className='hover:text-white/60 hover:underline'
+                >
+                  NexoraAgency.com
                 </Link>
               </p>
             </div>
             <div className='flex justify-center md:justify-end'>
               <Link href='/'>
                 <p className='text-base text-white pr-6 hover:text-white/60 hover:underline'>
-                  Privacy policy
+                  Privacy Policy
                 </p>
               </Link>
               <Link href='/'>
                 <p className='text-base text-white pl-6 border-solid border-l border-footer hover:text-white/60 hover:underline'>
-                  Terms & conditions
+                  Terms & Conditions
                 </p>
               </Link>
             </div>
@@ -122,4 +124,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer
