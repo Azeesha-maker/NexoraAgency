@@ -182,14 +182,23 @@ const ServicesPage = () => {
                 </ul>
               </div>
 
-              <div className='mt-auto'>
-                {/* CTA Button goes to simple /contact */}
+              <div className='mt-auto flex justify-between items-center'>
+                {/* CTA Button */}
                 <button
                   onClick={() => router.push(`/contact`)}
-                  className='bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition w-full'
+                  className='bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition'
                 >
                   {service.cta}
                 </button>
+
+                {/* Simple Click Here link */}
+                <Link
+                  href='/contact'
+                  className='text-primary font-semibold hover:text-accent transition flex items-center group-hover:text-white'
+                >
+                  Click here
+                  <Icon icon='tabler:chevron-right' className='ml-1' width='18' height='18' />
+                </Link>
               </div>
             </div>
           ))}

@@ -2,211 +2,48 @@
   position: relative;
   border-radius: 1.5rem;
   overflow: hidden;
-  background: #fff;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: #fff;
   transition: all 0.4s ease;
   z-index: 1;
 }
 
-/* 🔥 Glowing spinning border */
+.fyp-card h3,
+.fyp-card p,
+.fyp-card li,
+.fyp-card .linkA {
+  color: #fff !important;
+}
+
 .fyp-card::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: conic-gradient(
-    from var(--angle, 0deg),
-    #7C3AED,
-    #C084FC,
-    #9333EA,
-    #7C3AED
-  );
+  background: conic-gradient(from 0deg, #7C3AED, #C084FC, #9333EA, #7C3AED);
   padding: 2px;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
   animation: spin 3s linear infinite;
   z-index: 0;
 }
 
-.fyp-card h3,
-.fyp-card p,
-.fyp-card li ,
-.fyp-card .linkA{
-  color: #000000 !important;
-}
-
-/* ✅ Important: create a visible inner white layer */
 .fyp-card::after {
   content: "";
   position: absolute;
-  inset: 3px; /* same as padding thickness */
+  inset: 3px;
   border-radius: inherit;
-  background: #fff;
+  background: inherit;
   z-index: 1;
 }
 
-/* Spin animation */
-@keyframes spin {
-  to {
-    --angle: 360deg;
-  }
-}
-
-/* Bring content above */
 .fyp-card > * {
   position: relative;
   z-index: 2;
 }
 
-/* Hover styling */
-.fyp-card:hover {
-  background: #1a1a1a;
-  color: #fff;
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
-.fyp-card:hover::before {
-  animation-play-state: paused;
-}
-
-.fyp-card:hover h3,
-.fyp-card:hover p,
-.fyp-card:hover li ,
-.fyp-card:hover .linkA{
-  color: #000000 !important;
-}
-
-.fyp-card:hover .linkA{
-  color: #6C63FF;
-  text-decoration: none;
-}
-
-/* -------- Service Card Enhancement -------- */
-
-.group {
-  position: relative;
-  background: linear-gradient(135deg, #ffffff, #f9fafb);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  transform: translateY(0);
-  transition: all 0.4s ease;
-}
-
-.group:hover {
-  transform: translateY(-8px);
-  background: linear-gradient(135deg, #111827, #1f2937);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Gradient highlight border effect */
-.group::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 1.5rem;
-  padding: 2px;
-  background: linear-gradient(135deg, #4f46e5, #06b6d4);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.group:hover::before {
-  opacity: 1;
-}
-
-/* Title & text transitions */
-.group h3 {
-  transition: color 0.4s ease;
-  font-size: 1.25rem;
-  letter-spacing: 0.3px;
-}
-
-.group p,
-.group li {
-  transition: color 0.4s ease;
-}
-
-/* CTA button glow */
-.group button {
-  background: linear-gradient(135deg, #4f46e5, #06b6d4);
-  border: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
-}
-
-.group button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 18px rgba(6, 182, 212, 0.4);
-}
-
-/* Learn More link styling */
-.linkA {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.linkA::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -3px;
-  background: linear-gradient(90deg, #4f46e5, #06b6d4);
-  transition: width 0.3s ease;
-}
-
-.group:hover .linkA::after {
-  width: 100%;
-}
-
-/* Special style for FYP card */
-.fyp-card {
-  background: linear-gradient(135deg, #ec4899, #8b5cf6);
-  color: white !important;
-  box-shadow: 0 12px 25px rgba(236, 72, 153, 0.4);
-}
-
-.fyp-card h3,
-.fyp-card p,
-.fyp-card li {
-  color: #fff !important;
-}
-
-.fyp-card button {
-  background: white;
-  color: #111827;
-}
-
-.fyp-card button:hover {
-  background: #f9fafb;
+.fyp-card:hover button {
   transform: scale(1.05);
 }
-
-.fyp-card {
-  background: linear-gradient(135deg, #ec4899, #8b5cf6);
- 
-}
-.fyp-card h3,
-.fyp-card p,
-.fyp-card li {
-  color: #000000 !important;
-}
-
-.fyp-card span {
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.fyp-card:hover span {
-  transform: scale(1.05);
-}
-
