@@ -82,7 +82,7 @@ const FAQ = () => {
                 <Disclosure as='div'>
   {({ open }) => (
     <div>
-      <DisclosureButton className='flex w-full justify-between items-center text-left text-2xl font-medium focus:outline-hidden hover:cursor-pointer'>
+      <DisclosureButton className='flex w-full justify-between items-center text-left text-2xl font-medium focus:outline-hidden cursor-pointer'>
         <span className='text-black'>{item.question}</span>
         <div
           className={`h-5 w-5 transform transition-transform duration-300 ${

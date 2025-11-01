@@ -41,7 +41,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
             <Link
               key={index}
               href={subItem.href}
-              className="block py-2 text-gray-500 hover:bg-gray-200"
+              className="block py-2 text-[var(--color-gray-500)] hover:bg-[var(--color-gray-200)]"
             >
               {subItem.label}
             </Link>

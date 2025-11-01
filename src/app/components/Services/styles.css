@@ -2,8 +2,8 @@
   position: relative;
   border-radius: 1.5rem;
   overflow: hidden;
-  background: linear-gradient(135deg, #ec4899, #8b5cf6);
-  color: #fff;
+  background: linear-gradient(135deg, var(--color-gradient-pink), var(--color-gradient-purple-1));
+  color: var(--color-white);
   transition: all 0.4s ease;
   z-index: 1;
 }
@@ -12,7 +12,7 @@
 .fyp-card p,
 .fyp-card li,
 .fyp-card .linkA {
-  color: #fff !important;
+  color: var(--color-white) !important;
 }
 
 .fyp-card::before {
@@ -20,7 +20,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: conic-gradient(from 0deg, #7C3AED, #C084FC, #9333EA, #7C3AED);
+  background: conic-gradient(from 0deg, var(--color-gradient-purple-2), var(--color-gradient-purple-3), var(--color-gradient-purple-4), var(--color-gradient-purple-2));
   padding: 2px;
   animation: spin 3s linear infinite;
   z-index: 0;
@@ -61,7 +61,7 @@
 
 .animate-spin-slow {
   animation: spin-slow 4s linear infinite;
-  border-image: conic-gradient(from 0deg, #ec4899, #8b5cf6, #6366f1, #ec4899) 1;
+  border-image: conic-gradient(from 0deg, var(--color-gradient-pink), var(--color-gradient-purple-1), var(--color-gradient-indigo), var(--color-gradient-pink)) 1;
   border-style: solid;
   border-width: 4px;
 }

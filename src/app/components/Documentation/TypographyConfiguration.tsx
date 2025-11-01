@@ -8,10 +8,10 @@ export const TypographyConfiguration = () => {
           <span className="font-semibold text-base">src/app/layout.tsx</span>{" "}
         </p>
         <div className="py-4 px-3 rounded-md bg-dark_grey mt-8">
-          <p className="text-sm text-gray-400 flex flex-col gap-2 mb-3">
+          <p className="text-sm text-[var(--color-gray-400)] flex flex-col gap-2 mb-3">
             {`import { Montserrat } from "next/font/google";`}
           </p>
-          <p className="text-sm text-gray-400 flex flex-col gap-2">
+          <p className="text-sm text-[var(--color-gray-400)] flex flex-col gap-2">
             {`const montserrat = Montserrat({ subsets: ["latin"] });`}
           </p>
         </div>

@@ -83,7 +83,7 @@ const Signin = () => {
           <button
             onClick={loginUser}
             type='submit'
-            className='bg-darkmode w-full py-3 rounded-lg text-18 font-medium border text-white border-darkmode hover:text-darkmode hover:bg-transparent'>
+            className='bg-darkmode w-full py-3 rounded-lg text-18 font-medium border text-white border-darkmode hover:text-darkmode hover:bg-transparent cursor-pointer'>
             Sign In {loading && <Loader />}
           </button>
         </div>

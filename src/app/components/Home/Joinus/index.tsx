@@ -31,7 +31,7 @@ const Join = () => {
                 autoComplete='off'
               />
             </div>
-            <div className='flex-1 border-t sm:border-t-0 sm:border-l border-gray-300/50 dark:border-white/10'>
+            <div className='flex-1 border-t sm:border-t-0 sm:border-l border-[var(--color-gray-300)]/50 dark:border-white/10'>
               <input
                 type='email'
                 className='my-4 py-4 sm:pl-6 lg:text-xl text-black dark:text-white sm:rounded-full bg-transparent pl-1 focus:outline-hidden placeholder:text-black/40 dark:placeholder:text-white/50'

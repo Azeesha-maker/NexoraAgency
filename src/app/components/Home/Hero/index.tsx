@@ -51,11 +51,11 @@ const Hero = () => {
             <h1 className='text-4xl md:text-5xl font-bold mt-6 leading-tight'>
               We Build Stunning & Scalable Websites
             </h1>
-            <p className='text-gray-600 text-lg mt-4 max-w-xl mx-auto lg:mx-0'>
+            <p className='text-[var(--color-gray-600)] text-lg mt-4 max-w-xl mx-auto lg:mx-0'>
               From sleek business sites to powerful web apps  we turn your vision into a digital experience that stands out.
             </p>
             <Link href={'/services'}>
-              <button className='bg-primary text-white text-lg font-semibold py-4 px-10 rounded-full hover:bg-darkmode transition-all mt-10'>
+              <button className='bg-primary text-white text-lg font-semibold py-4 px-10 rounded-full hover:bg-darkmode transition-all mt-10 cursor-pointer'>
                 Get Started
               </button>
             </Link>

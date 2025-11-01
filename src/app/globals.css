@@ -3,16 +3,22 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  /* Container Widths */
   --container-screen-xl: 75rem;
   --container-screen-2xl: 83.75rem;
 
+  /* Shadows */
   --shadow-cause-shadow: 0px 4px 17px 0px #00000008;
   --shadow-linckedin: 0px 19px 30px 0px #00000033;
   --shadow-manage-shadow: 0px 4px 5px 1px #c1c1c159;
   --shadow-testimonial: 0px 5px 10px 0px #5968760d;
+  --shadow-glow-primary: 0px 0px 25px -5px rgba(45, 67, 99, 0.5);
+  --shadow-glow-accent: 0px 0px 30px -5px rgba(34, 211, 238, 0.45);
 
+  /* Animations */
   --transition-duration-150: 150ms;
 
+  /* Spacing */
   --spacing-25: 35.625rem;
   --spacing-29: 28rem;
   --spacing-45: 45rem;
@@ -29,37 +35,90 @@
   --spacing-8_5: 8.5rem;
   --spacing-3_75: 3.75rem;
 
+  /* Inset + Z-Index */
   --inset-5\%: 5%;
   --inset-35\%: 35%;
-
   --z-index-1: 1;
   --z-index-2: 2;
   --z-index-999: 999;
 
-  --color-primary: #0066ff;
-  --color-purple: #1e013a;
-  --color-grey: #f4f5f6;
-  --color-border: #dbdbdb;
-  --color-darkmode: #00224a;
-  --color-deep-slate: #02398a;
+  /*
+    ============================================
+    🌈 CENTRALIZED COLOR SYSTEM (ENHANCED THEME)
+    ============================================
+    Use Tailwind utilities like:
+      text-[var(--color-primary)]
+      bg-[var(--color-surface)]
+      from-[var(--color-gradient-start)] to-[var(--color-gradient-end)]
+    ============================================
+  */
 
+  /* Core Brand */
+  --color-primary: #2D4363;
+  --color-secondary: #1B2A41;
+  --color-accent: #22D3EE;
+  --color-accent-light: #A5F3FC;
+  --color-neutral: #F4F5F6;
+
+  /* Extended Palette */
+  --color-deep-slate: #2D4363;
+  --color-darkmode: #0B1120;
+  --color-border: #dbdbdb;
+  --color-surface: #111827;
+  --color-surface-alt: #1F2937;
+  --color-overlay: rgba(17, 24, 39, 0.75);
+
+  /* Gradients */
+  --color-gradient-start: #2D4363;
+  --color-gradient-end: #2563EB;
+  --color-gradient-teal: linear-gradient(135deg, #22D3EE, #3B82F6);
+  --color-gradient-purple: linear-gradient(135deg, #7C3AED, #9333EA);
+  --color-gradient-gold: linear-gradient(135deg, #FACC15, #F59E0B);
+
+  /* Utility Shades */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Accent Tones */
+  --color-teal-100: #ccfbf1;
+  --color-teal-400: #2dd4bf;
+  --color-teal-600: #0d9488;
+  --color-blue-400: #60a5fa;
+  --color-blue-700: #1d4ed8;
+  --color-purple-500: #a855f7;
+  --color-yellow-400: #facc15;
+
+  /* Status Colors */
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Typography */
   --text-80: 5rem;
   --text-65: 4.063rem;
 
+  /* Blur */
   --blur-220: 220px;
   --blur-400: 400px;
 
+  /* Backgrounds */
   --background-image-faq-bg: url('/images/faq/swirl.png');
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* =============================
+   Base and Utility Extensions
+============================= */
 @layer base {
   *,
   ::after,
@@ -69,38 +128,70 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
   section {
     @apply py-20;
   }
 
+  /* Headings */
   h1 {
-    @apply text-black text-6xl sm:text-80 font-bold sm:leading-24 leading-20;
+    @apply text-black dark:text-white text-6xl sm:text-[var(--text-80)] font-bold sm:leading-[1.2] leading-[1.15];
   }
 
   h2 {
-    @apply text-black text-5xl lg:text-65 font-bold;
+    @apply text-black dark:text-white text-5xl lg:text-[var(--text-65)] font-bold;
   }
 
   h3 {
-    @apply text-black text-4xl lg:text-6xl font-semibold;
+    @apply text-black dark:text-white text-4xl font-semibold;
   }
 
   h4 {
-    @apply text-black text-3xl lg:text-4xl font-semibold;
+    @apply text-black dark:text-white text-3xl font-semibold;
   }
 
   h5 {
-    @apply text-black text-2xl font-semibold;
+    @apply text-black dark:text-white text-2xl font-semibold;
   }
 
   h6 {
-    @apply text-black text-xl;
+    @apply text-black dark:text-white text-xl;
   }
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+/* =============================
+   Glass + Accent Classes
+============================= */
+.glass-surface {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.accent-glow {
+  box-shadow: var(--shadow-glow-accent);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-primary {
+  background: var(--color-gradient-teal);
+}
+
+.bg-gradient-purple {
+  background: var(--color-gradient-purple);
+}
+
+.bg-gradient-gold {
+  background: var(--color-gradient-gold);
 }
 
 .bg-joinus {
@@ -109,4 +200,3 @@ html {
   background-repeat: no-repeat, no-repeat;
   background-position: 90% 100%, 2% 18%;
 }
-

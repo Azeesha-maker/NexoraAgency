@@ -30,7 +30,7 @@ const Beliefs = () => {
 
           {/* RIGHT CARD */}
           <div>
-            <div className="bg-[#D6FFEB] pt-12 px-10 sm:px-24 pb-52 md:pb-70 rounded-3xl bg-[url('/images/beliefs/bg.svg')] bg-no-repeat bg-bottom">
+            <div className="bg-[var(--color-light-teal)] pt-12 px-10 sm:px-24 pb-52 md:pb-70 rounded-3xl bg-[url('/images/beliefs/bg.svg')] bg-no-repeat bg-bottom">
               <p className='text-lg font-normal text-primary tracking-widest mb-5 text-center sm:text-start uppercase'>
                 MISSION
               </p>

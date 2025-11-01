@@ -122,7 +122,7 @@ const Manage = () => {
                   <p className='text-6xl font-extrabold mb-3'>${items.price}</p>
                   <p className='text-sm font-medium mb-6'>{items.user}</p>
                   <Link href={'#'}>
-                    <button className='text-sm font-bold text-primary bg-transparent hover:bg-primary hover:text-white border-2 border-primary rounded-full py-4 px-12 mb-6 hover:cursor-pointer'>
+                    <button className='text-sm font-bold text-primary bg-transparent hover:bg-primary hover:text-white border-2 border-primary rounded-full py-4 px-12 mb-6 cursor-pointer'>
                       Start My 15-day Trial
                     </button>
                   </Link>

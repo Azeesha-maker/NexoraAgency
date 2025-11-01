@@ -82,7 +82,7 @@ const SignUp = () => {
         <div className='mb-9'>
           <button
             type='submit'
-            className='flex w-full items-center text-18 font-medium justify-center rounded-md bg-darkmode px-5 py-3 text-white transition duration-300 ease-in-out hover:bg-transparent hover:text-darkmode border-darkmode border '>
+            className='flex w-full items-center text-18 font-medium justify-center rounded-md bg-darkmode px-5 py-3 text-white transition duration-300 ease-in-out hover:bg-transparent hover:text-darkmode border-darkmode border cursor-pointer'>
             Sign Up {loading && <Loader />}
           </button>
         </div>

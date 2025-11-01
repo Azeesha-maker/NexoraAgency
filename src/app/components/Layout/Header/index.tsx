@@ -46,7 +46,7 @@ const Header = () => {
         </div>
 
         {/* 🔹 Desktop Nav Links */}
-        <nav className='hidden lg:flex items-center space-x-8 font-medium text-gray-700'>
+        <nav className='hidden lg:flex items-center space-x-8 font-medium text-[var(--color-gray-700)]'>
           <Link href="/services" className="hover:text-primary transition">
   Services
 </Link>
@@ -75,7 +75,7 @@ const Header = () => {
         {/* 🔹 Mobile Menu Button */}
         <button
           onClick={() => setNavbarOpen(!navbarOpen)}
-          className='lg:hidden text-3xl text-darkmode focus:outline-none'
+          className='lg:hidden text-3xl text-darkmode focus:outline-none cursor-pointer'
         >
           <Icon icon={navbarOpen ? 'mdi:close' : 'mdi:menu'} />
         </button>

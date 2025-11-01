@@ -63,7 +63,7 @@ export default function ProjectsPage() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-b from-[var(--color-blue-50)] via-white to-[var(--color-blue-50)]">
       {/* ===== HERO + PROJECTS – Split Layout ===== */}
       <section className="pt-16 pb-32 md:pt-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -75,21 +75,21 @@ export default function ProjectsPage() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--color-gray-900)] leading-tight">
                 The work we do,
                 <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-blue-600)] to-[var(--color-blue-800)]">
                   and the people we help.
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-gray-600 max-w-lg">
+              <p className="text-base sm:text-lg text-[var(--color-gray-600)] max-w-lg">
                 Explore live demos, source code, and creative experiments built for students, startups, and enterprises.
               </p>
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: '160px' }}
                 transition={{ delay: 0.6, duration: 0.8 }}
-                className="h-1.5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full"
+                className="h-1.5 bg-gradient-to-r from-[var(--color-blue-600)] to-[var(--color-blue-800)] rounded-full"
               />
             </motion.div>
 
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
                   transition={{ delay: idx * 0.1 }}
                   onMouseEnter={() => setHovered(idx)}
                   onMouseLeave={() => setHovered(null)}
-                  className="group relative bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border border-blue-100 shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] hover:border-blue-300"
+                  className="group relative bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden border border-[var(--color-blue-100)] shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] hover:border-[var(--color-blue-300)]"
                 >
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden">
@@ -114,13 +114,13 @@ export default function ProjectsPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-blue-900)]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
                     {/* Overlay CTA */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       <Link
                         href={project.link}
-                        className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-blue-700 font-semibold shadow-lg hover:bg-blue-50 transition-all"
+                        className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-[var(--color-blue-700)] font-semibold shadow-lg hover:bg-[var(--color-blue-50)] transition-all"
                       >
                         View Live
                         <Icon icon="tabler:external-link" width="18" />
@@ -134,31 +134,31 @@ export default function ProjectsPage() {
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="text-xs font-medium px-3 py-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-sm"
+                          className="text-xs font-medium px-3 py-1 rounded-full bg-gradient-to-r from-[var(--color-blue-500)] to-[var(--color-blue-600)] text-white shadow-sm"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold text-[var(--color-gray-900)] mb-2 group-hover:text-[var(--color-blue-600)] transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    <p className="text-[var(--color-gray-600)] text-sm leading-relaxed mb-4">
                       {project.description}
                     </p>
 
                     <div className="flex items-center gap-4">
                       <Link
                         href={project.link}
-                        className="flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all text-sm"
+                        className="flex items-center gap-2 text-[var(--color-blue-600)] font-medium hover:gap-3 transition-all text-sm"
                       >
                         View Project
                         <Icon icon="tabler:arrow-right" width="16" className="group-hover:translate-x-1 transition-transform" />
                       </Link>
                       <Link
                         href={project.link + '?source'}
-                        className="text-gray-500 hover:text-blue-600 transition-colors text-xs"
+                        className="text-[var(--color-gray-500)] hover:text-[var(--color-blue-600)] transition-colors text-xs"
                       >
                         Source Code
                       </Link>
@@ -166,7 +166,7 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Blue Glow */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-500 -z-10" />
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[var(--color-blue-400)]/20 to-[var(--color-blue-600)]/20 opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-500 -z-10" />
                 </motion.article>
               ))}
             </div>

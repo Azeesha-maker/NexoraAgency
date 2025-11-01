@@ -125,9 +125,8 @@ export default function TeamPage() {
   const TeamCard = (member: TeamMember, index: number) => (
     <div
       key={index}
-      className={`group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-        hovered === index ? 'ring-2 ring-blue-500' : ''
-      }`}
+      className={`group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${hovered === index ? 'ring-2 ring-blue-500' : ''
+        }`}
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
     >
@@ -144,29 +143,29 @@ export default function TeamPage() {
         </p>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-        <p className="mb-3 text-blue-600">{member.role}</p>
-        <p className="mb-4 text-sm text-gray-600">{member.bio}</p>
+        <h3 className="text-xl font-bold text-[var(--color-gray-900)]">{member.name}</h3>
+        <p className="mb-3 text-[var(--color-blue-600)]">{member.role}</p>
+        <p className="mb-4 text-sm text-[var(--color-gray-600)]">{member.bio}</p>
         <div className="mb-4 flex flex-wrap gap-2">
           {member.skills.slice(0, 3).map((skill, i) => (
-            <span key={i} className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+            <span key={i} className="rounded-full bg-[var(--color-gray-100)] px-3 py-1 text-xs font-medium text-[var(--color-gray-700)]">
               {skill}
             </span>
           ))}
           {member.skills.length > 3 && (
-            <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-500">
+            <span className="rounded-full bg-[var(--color-gray-100)] px-3 py-1 text-xs font-medium text-[var(--color-gray-500)]">
               +{member.skills.length - 3}
             </span>
           )}
         </div>
         <div className="flex gap-3">
           {member.linkedin && (
-            <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 transition hover:text-blue-600">
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-[var(--color-gray-400)] transition hover:text-[var(--color-blue-600)]">
               <Linkedin className="h-5 w-5" />
             </a>
           )}
           {member.github && (
-            <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 transition hover:text-gray-900">
+            <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-[var(--color-gray-400)] transition hover:text-[var(--color-gray-900)]">
               <Github className="h-5 w-5" />
             </a>
           )}
@@ -178,23 +177,23 @@ export default function TeamPage() {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-blue-50)] via-white to-[var(--color-purple-50)]">
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] opacity-40" />
         <div className="container mx-auto px-4 py-24 text-center relative z-10">
-          <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
+          <h1 className="mb-6 text-5xl font-bold tracking-tight text-[var(--color-gray-900)] md:text-6xl">
             Meet the People Behind Our Success
           </h1>
-          <p className="mx-auto mb-8 max-w-3xl text-lg text-gray-700 md:text-xl">
+          <p className="mx-auto mb-8 max-w-3xl text-lg text-[var(--color-gray-700)] md:text-xl">
             Behind every successful project is a team of passionate professionals. Meet our diverse group of designers, developers, and strategists who bring creativity, expertise, and dedication to everything we do.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link href="/contact">
-              <button className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700">
+              <button className="rounded-lg bg-[var(--color-blue-600)] px-6 py-3 font-medium text-white transition hover:bg-[var(--color-blue-700)] cursor-pointer">
                 Contact Our Experts
               </button>
             </Link>
             <Link href="/careers">
-              <button className="rounded-lg border border-gray-300 bg-white px-6 py-3 font-medium text-gray-900 transition hover:bg-gray-50">
+              <button className="rounded-lg border border-[var(--color-gray-300)] bg-white px-6 py-3 font-medium text-[var(--color-gray-900)] transition hover:bg-[var(--color-gray-50)] cursor-pointer">
                 View Careers
               </button>
             </Link>
@@ -202,49 +201,45 @@ export default function TeamPage() {
         </div>
 
         {/* Responsive Blobs */}
-        <div className="absolute left-0 top-20 h-64 w-64 animate-blob rounded-full bg-purple-300 opacity-60 blur-xl mix-blend-multiply md:-left-20 md:h-72 md:w-72" />
-        <div className="animation-delay-2000 absolute right-0 top-40 h-64 w-64 animate-blob rounded-full bg-yellow-300 opacity-60 blur-xl mix-blend-multiply md:-right-20 md:h-72 md:w-72" />
-        <div className="animation-delay-4000 absolute bottom-0 left-20 h-64 w-64 animate-blob rounded-full bg-pink-300 opacity-60 blur-xl mix-blend-multiply md:-bottom-20 md:left-40 md:h-72 md:w-72" />
+        <div className="absolute left-0 top-20 h-64 w-64 animate-blob rounded-full bg-[var(--color-purple-300)] opacity-60 blur-xl mix-blend-multiply md:-left-20 md:h-72 md:w-72" />
+        <div className="animation-delay-2000 absolute right-0 top-40 h-64 w-64 animate-blob rounded-full bg-[var(--color-yellow-300)] opacity-60 blur-xl mix-blend-multiply md:-right-20 md:h-72 md:w-72" />
+        <div className="animation-delay-4000 absolute bottom-0 left-20 h-64 w-64 animate-blob rounded-full bg-[var(--color-pink-300)] opacity-60 blur-xl mix-blend-multiply md:-bottom-20 md:left-40 md:h-72 md:w-72" />
       </section>
 
       {/* ===== TEAM – 4 GIRLS + 2 BOYS (SAME SIZE) ===== */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-900">Our Amazing Team</h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            <h2 className="mb-4 text-4xl font-bold text-[var(--color-gray-900)]">Our Amazing Team</h2>
+            <p className="mx-auto max-w-2xl text-lg text-[var(--color-gray-600)]">
               Get to know the talented individuals who make everything possible.
             </p>
           </div>
 
-          {/* Unified 4-column grid */}
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-center">
-            {/* Girls – 4 cards */}
-            {girls.map((m, i) => TeamCard(m, i))}
-
-            {/* Boys – 2 cards, centered */}
             <div className="hidden lg:block" /> {/* Spacer */}
             {boys.map((m, i) => TeamCard(m, girls.length + i))}
             <div className="hidden lg:block" /> {/* Spacer */}
+            {girls.map((m, i) => TeamCard(m, i))}
           </div>
         </div>
       </section>
 
       {/* ===== DEPARTMENTS ===== */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[var(--color-gray-50)]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-900">How We Work</h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            <h2 className="mb-4 text-4xl font-bold text-[var(--color-gray-900)]">How We Work</h2>
+            <p className="mx-auto max-w-2xl text-lg text-[var(--color-gray-600)]">
               Our team is organized into specialized departments that work seamlessly together.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 justify-center">
             {departments.map(({ name, Icon, desc }, i) => (
               <div key={i} className="rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-lg text-center">
-                <Icon className="mx-auto mb-4 h-12 w-12 text-blue-600" />
-                <h3 className="mb-2 text-xl font-bold text-gray-900">{name}</h3>
-                <p className="text-sm text-gray-600">{desc}</p>
+                <Icon className="mx-auto mb-4 h-12 w-12 text-[var(--color-blue-600)]" />
+                <h3 className="mb-2 text-xl font-bold text-[var(--color-gray-900)]">{name}</h3>
+                <p className="text-sm text-[var(--color-gray-600)]">{desc}</p>
               </div>
             ))}
           </div>
@@ -255,17 +250,17 @@ export default function TeamPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-900">Our Achievements</h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            <h2 className="mb-4 text-4xl font-bold text-[var(--color-gray-900)]">Our Achievements</h2>
+            <p className="mx-auto max-w-2xl text-lg text-[var(--color-gray-600)]">
               Proven track record of excellence and client success.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4 justify-center">
             {achievements.map(({ Icon, value, label }, i) => (
               <div key={i} className="text-center">
-                <Icon className="mx-auto mb-3 h-12 w-12 text-blue-600 md:h-16 md:w-16" />
-                <div className="text-3xl font-bold text-gray-900 md:text-4xl">{value}</div>
-                <p className="text-gray-600">{label}</p>
+                <Icon className="mx-auto mb-3 h-12 w-12 text-[var(--color-blue-600)] md:h-16 md:w-16" />
+                <div className="text-3xl font-bold text-[var(--color-gray-900)] md:text-4xl">{value}</div>
+                <p className="text-[var(--color-gray-600)]">{label}</p>
               </div>
             ))}
           </div>
@@ -273,20 +268,20 @@ export default function TeamPage() {
       </section>
 
       {/* ===== CULTURE & VALUES ===== */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+      <section className="py-20 bg-gradient-to-r from-[var(--color-blue-50)] to-[var(--color-purple-50)]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-900">Our Culture & Values</h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            <h2 className="mb-4 text-4xl font-bold text-[var(--color-gray-900)]">Our Culture & Values</h2>
+            <p className="mx-auto max-w-2xl text-lg text-[var(--color-gray-600)]">
               We believe in collaboration, creativity, and continuous learning.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 justify-center">
             {values.map(({ Icon, title, desc }, i) => (
               <div key={i} className="rounded-xl bg-white p-6 shadow-lg transition-shadow hover:shadow-xl text-center">
-                <Icon className="mx-auto mb-4 h-12 w-12 text-blue-600" />
-                <h3 className="mb-2 text-xl font-bold text-gray-900">{title}</h3>
-                <p className="text-sm text-gray-600">{desc}</p>
+                <Icon className="mx-auto mb-4 h-12 w-12 text-[var(--color-blue-600)]" />
+                <h3 className="mb-2 text-xl font-bold text-[var(--color-gray-900)]">{title}</h3>
+                <p className="text-sm text-[var(--color-gray-600)]">{desc}</p>
               </div>
             ))}
           </div>
@@ -294,7 +289,7 @@ export default function TeamPage() {
           <div className="mt-16 rounded-2xl bg-white p-8 shadow-xl">
             <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <h3 className="mb-6 text-2xl font-bold text-gray-900">Life at Our Company</h3>
+                <h3 className="mb-6 text-2xl font-bold text-[var(--color-gray-900)]">Life at Our Company</h3>
                 <ul className="space-y-4">
                   {[
                     'Flexible remote & hybrid work options',
@@ -303,34 +298,34 @@ export default function TeamPage() {
                     'Community volunteering & social impact initiatives',
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-blue-600" />
-                      <span className="text-gray-700">{item}</span>
+                      <div className="h-2 w-2 rounded-full bg-[var(--color-blue-600)]" />
+                      <span className="text-[var(--color-gray-700)]">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl" />
+              <div className="bg-[var(--color-gray-200)] border-2 border-dashed rounded-xl" />
             </div>
           </div>
         </div>
       </section>
 
       {/* ===== CTA ===== */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-[var(--color-gray-900)] text-white">
         <div className="container mx-auto px-4 max-w-7xl text-center">
-          <h2 className="mb-6 text-4xl font-bold text-amber-50">Ready to Work With Us?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
+          <h2 className="mb-6 text-4xl font-bold text-white">Ready to Work With Us?</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--color-gray-300)]">
             Whether you're looking to join our team or need expert solutions for your business, we're here to help you succeed.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link href="/contact">
-              <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium transition hover:bg-blue-700">
+              <button className="flex items-center gap-2 rounded-lg bg-[var(--color-blue-600)] px-6 py-3 font-medium transition hover:bg-[var(--color-blue-700)] cursor-pointer">
                 <Mail className="h-5 w-5" />
                 Contact Our Experts
               </button>
             </Link>
             <Link href="/careers">
-              <button className="flex items-center gap-2 rounded-lg border border-white bg-transparent px-6 py-3 font-medium transition hover:bg-white hover:text-gray-900">
+              <button className="flex items-center gap-2 rounded-lg border border-white bg-transparent px-6 py-3 font-medium transition hover:bg-white hover:text-[var(--color-gray-900)] cursor-pointer">
                 <Users className="h-5 w-5" />
                 View Careers
               </button>

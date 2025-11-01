@@ -97,14 +97,14 @@ export default function DynamicContactForm() {
 
   return (
     <>
-      <section className="bg-gradient-to-b from-gray-50 to-white py-12 md:py-20 font-poppins">
+      <section className="bg-gradient-to-b from-[var(--color-gray-50)] to-white py-12 md:py-20 font-poppins">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-10 md:mb-14">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-              Let’s Build Your Project Together
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--color-gray-900)] mb-3">
+              Let's Build Your Project Together
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-[var(--color-gray-600)] max-w-3xl mx-auto">
               Fill your <span className="font-semibold text-primary">contact</span> on the{' '}
               <span className="sm:hidden">top</span>
               <span className="hidden sm:inline">left</span> and{' '}
@@ -122,60 +122,60 @@ export default function DynamicContactForm() {
           >
             {/* LEFT / TOP: CONTACT */}
             <div className="space-y-5 sm:space-y-6 order-1 md:order-none">
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 flex items-center gap-2">
+              <h2 className="text-xl sm:text-2xl font-bold text-[var(--color-gray-800)] flex items-center gap-2">
                 <Icon icon="tabler:user" className="text-primary w-6 h-6" />
                 Your Contact Details
               </h2>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Full Name *</label>
+                <label className="block text-sm font-semibold text-[var(--color-gray-700)] mb-1.5">Full Name *</label>
                 <input
                   type="text"
                   value={contact.name}
                   onChange={(e) => setContact({ ...contact, name: e.target.value })}
-                  className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:outline-none transition"
+                  className="w-full px-4 py-3 text-base border border-[var(--color-gray-300)] rounded-xl focus:ring-2 focus:ring-primary focus:outline-none transition"
                   placeholder="John Doe"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email *</label>
+                <label className="block text-sm font-semibold text-[var(--color-gray-700)] mb-1.5">Email *</label>
                 <input
                   type="email"
                   value={contact.email}
                   onChange={(e) => setContact({ ...contact, email: e.target.value })}
-                  className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:outline-none"
+                  className="w-full px-4 py-3 text-base border border-[var(--color-gray-300)] rounded-xl focus:ring-2 focus:ring-primary focus:outline-none"
                   placeholder="john@example.com"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone *</label>
+                <label className="block text-sm font-semibold text-[var(--color-gray-700)] mb-1.5">Phone *</label>
                 <input
                   type="tel"
                   value={contact.phone}
                   onChange={(e) => setContact({ ...contact, phone: e.target.value })}
-                  className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:outline-none"
+                  className="w-full px-4 py-3 text-base border border-[var(--color-gray-300)] rounded-xl focus:ring-2 focus:ring-primary focus:outline-none"
                   placeholder="+92 300 1234567"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Company (optional)</label>
+                <label className="block text-sm font-semibold text-[var(--color-gray-700)] mb-1.5">Company (optional)</label>
                 <input
                   type="text"
                   value={contact.company}
                   onChange={(e) => setContact({ ...contact, company: e.target.value })}
-                  className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:outline-none"
+                  className="w-full px-4 py-3 text-base border border-[var(--color-gray-300)] rounded-xl focus:ring-2 focus:ring-primary focus:outline-none"
                   placeholder="ABC Corp"
                 />
               </div>
 
-              <div className="mt-6 p-4 bg-gray-50 rounded-xl text-center text-xs sm:text-sm text-gray-600">
-                <Icon icon="tabler:shield-check" className="inline-block text-green-600 mr-1 w-5 h-5" />
+              <div className="mt-6 p-4 bg-[var(--color-gray-50)] rounded-xl text-center text-xs sm:text-sm text-[var(--color-gray-600)]">
+                <Icon icon="tabler:shield-check" className="inline-block text-[var(--color-green-600)] mr-1 w-5 h-5" />
                 Your data is secure. We reply within <strong>2 hours</strong>.
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function DynamicContactForm() {
             {/* RIGHT / BOTTOM: REQUIREMENTS */}
             <div className="space-y-5 sm:space-y-6 order-2 md:order-none">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 flex items-center gap-2">
+                <h2 className="text-xl sm:text-2xl font-bold text-[var(--color-gray-800)] flex items-center gap-2">
                   <Icon icon="tabler:briefcase" className="text-primary w-6 h-6" />
                   Project Requirements
                 </h2>
@@ -192,7 +192,7 @@ export default function DynamicContactForm() {
                     <div
                       key={i}
                       className={`h-2 w-10 sm:w-12 rounded-full transition-all duration-300 ${
-                        i <= step ? 'bg-primary' : 'bg-gray-300'
+                        i <= step ? 'bg-primary' : 'bg-[var(--color-gray-300)]'
                       }`}
                     />
                   ))}
@@ -202,14 +202,14 @@ export default function DynamicContactForm() {
               {/* Step 1: Service */}
               {step === 1 && (
                 <div className="relative">
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-sm font-semibold text-[var(--color-gray-700)] mb-1.5">
                     Project Type *
                   </label>
                   <div
                     onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="cursor-pointer w-full bg-gray-100 border border-gray-300 rounded-xl p-4 flex justify-between items-center shadow-sm hover:bg-gray-50 transition"
+                    className="w-full bg-[var(--color-gray-100)] border border-[var(--color-gray-300)] rounded-xl p-4 flex justify-between items-center shadow-sm hover:bg-[var(--color-gray-50)] transition"
                   >
-                    <span className={`text-base ${formData.service ? 'text-gray-900' : 'text-gray-400'}`}>
+                    <span className={`text-base ${formData.service ? 'text-[var(--color-gray-900)]' : 'text-[var(--color-gray-400)]'}`}>
                       {formData.service || '-- Select a Service --'}
                     </span>
                     <Icon
@@ -219,11 +219,11 @@ export default function DynamicContactForm() {
                     />
                   </div>
                   {dropdownOpen && (
-                    <ul className="absolute z-20 w-full bg-white border border-gray-300 rounded-xl mt-1 max-h-60 overflow-auto shadow-lg">
+                    <ul className="absolute z-20 w-full bg-white border border-[var(--color-gray-300)] rounded-xl mt-1 max-h-60 overflow-auto shadow-lg">
                       {services.map((s) => (
                         <li
                           key={s}
-                          className="px-4 py-3 hover:bg-primary hover:text-white cursor-pointer font-medium transition text-base"
+                          className="px-4 py-3 hover:bg-primary hover:text-white font-medium transition text-base"
                           onClick={() => {
                             setFormData({ ...formData, service: s })
                             setDropdownOpen(false)
@@ -240,7 +240,7 @@ export default function DynamicContactForm() {
               {/* Step 2: Budget */}
               {step === 2 && (
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-sm font-semibold text-[var(--color-gray-700)] mb-1.5">
                     Budget (USD) *
                   </label>
                   <input
@@ -248,7 +248,7 @@ export default function DynamicContactForm() {
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     placeholder="e.g. 5000"
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:outline-none"
+                    className="w-full px-4 py-3 text-base border border-[var(--color-gray-300)] rounded-xl focus:ring-2 focus:ring-primary focus:outline-none"
                     required
                   />
                 </div>
@@ -257,7 +257,7 @@ export default function DynamicContactForm() {
               {/* Step 3: File Upload */}
               {step === 3 && (
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-sm font-semibold text-[var(--color-gray-700)] mb-1.5">
                     Upload Reference (PDF) *
                   </label>
                   <input
@@ -266,10 +266,10 @@ export default function DynamicContactForm() {
                     onChange={(e) =>
                       e.target.files && setFormData({ ...formData, file: e.target.files[0] })
                     }
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90"
+                    className="w-full px-4 py-3 text-base border border-[var(--color-gray-300)] rounded-xl focus:ring-2 focus:ring-primary focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90"
                   />
                   {formData.file && (
-                    <p className="mt-2 text-sm text-gray-600 flex items-center gap-1">
+                    <p className="mt-2 text-sm text-[var(--color-gray-600)] flex items-center gap-1">
                       <Icon icon="tabler:file-check" className="w-5 h-5" />
                       {formData.file.name}
                     </p>
@@ -280,14 +280,14 @@ export default function DynamicContactForm() {
               {/* Step 4: Message */}
               {step === 4 && (
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-sm font-semibold text-[var(--color-gray-700)] mb-1.5">
                     Additional Details
                   </label>
                   <textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder={getServiceMessage()}
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-xl h-32 resize-none focus:ring-2 focus:ring-primary focus:outline-none"
+                    className="w-full px-4 py-3 text-base border border-[var(--color-gray-300)] rounded-xl h-32 resize-none focus:ring-2 focus:ring-primary focus:outline-none"
                   />
                 </div>
               )}
@@ -298,7 +298,7 @@ export default function DynamicContactForm() {
                   <button
                     type="button"
                     onClick={handleBack}
-                    className="order-2 sm:order-1 w-full sm:w-auto px-5 py-3 bg-gray-200 text-gray-800 rounded-xl font-semibold hover:bg-gray-300 transition text-base"
+                    className="order-2 sm:order-1 w-full sm:w-auto px-5 py-3 bg-[var(--color-gray-200)] text-[var(--color-gray-800)] rounded-xl font-semibold hover:bg-[var(--color-gray-300)] transition text-base"
                   >
                     Back
                   </button>
@@ -327,7 +327,7 @@ export default function DynamicContactForm() {
           </form>
 
           {/* Footer */}
-          <p className="text-center text-xs sm:text-sm text-gray-500 mt-8 px-4">
+          <p className="text-center text-xs sm:text-sm text-[var(--color-gray-500)] mt-8 px-4">
             Need help?{' '}
             <a href="https://wa.me/1234567890" className="text-primary font-semibold">
               Chat on WhatsApp
@@ -350,14 +350,14 @@ export default function DynamicContactForm() {
             <div className="text-center">
               {/* Animated Checkmark */}
               <div className="mx-auto w-20 h-20 mb-4 relative">
-                <div className="absolute inset-0 rounded-full bg-green-100 animate-ping"></div>
-                <div className="relative flex items-center justify-center w-full h-full rounded-full bg-green-500 text-white">
+                <div className="absolute inset-0 rounded-full bg-[var(--color-green-100)] animate-ping"></div>
+                <div className="relative flex items-center justify-center w-full h-full rounded-full bg-[var(--color-green-500)] text-white">
                   <Icon icon="tabler:check" className="w-10 h-10" />
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-bold text-[var(--color-gray-900)] mb-2">Thank You!</h3>
+              <p className="text-[var(--color-gray-600)] mb-6">
                 Your project request has been submitted successfully. We’ll get back to you within <strong>2 hours</strong>.
               </p>
 
@@ -368,7 +368,7 @@ export default function DynamicContactForm() {
                 Got it
               </button>
 
-              <p className="text-xs text-gray-400 mt-4">
+              <p className="text-xs text-[var(--color-gray-400)] mt-4">
                 Closes automatically in 4s
               </p>
             </div>

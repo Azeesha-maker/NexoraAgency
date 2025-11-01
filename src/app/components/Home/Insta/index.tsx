@@ -24,7 +24,6 @@ const Insta = () => {
                 alt='instagram'
                 width={36}
                 height={36}
-                className='cursor-pointer'
               />
             </div>
           </Link>
@@ -48,7 +47,6 @@ const Insta = () => {
                 alt='instagram'
                 width={36}
                 height={36}
-                className='cursor-pointer'
               />
             </div>
           </Link>
@@ -71,7 +69,6 @@ const Insta = () => {
                 alt='instagram'
                 width={36}
                 height={36}
-                className='cursor-pointer'
               />
             </div>
           </Link>
@@ -94,7 +91,6 @@ const Insta = () => {
                 alt='instagram'
                 width={36}
                 height={36}
-                className='cursor-pointer'
               />
             </div>
           </Link>

@@ -29,7 +29,7 @@ export const QuickStart = () => {
         </h6>
         <div className="py-4 px-3 rounded-md bg-dark_grey">
           <p className="text-sm text-black/60">
-            <span className="text-yellow-500">cd</span> project-folder
+            <span className="text-[var(--color-yellow-500)]">cd</span> project-folder
           </p>
           <p className="text-sm text-black/60 mt-2">npm install</p>
         </div>
@@ -38,7 +38,7 @@ export const QuickStart = () => {
         </h6>
         <div className="py-4 px-3 rounded-md bg-dark_grey">
           <p className="text-sm text-black/60">
-            <span className="text-yellow-500">cd</span> project-folder
+            <span className="text-[var(--color-yellow-500)]">cd</span> project-folder
           </p>
           <p className="text-sm text-black/60 mt-2">yarn install</p>
         </div>

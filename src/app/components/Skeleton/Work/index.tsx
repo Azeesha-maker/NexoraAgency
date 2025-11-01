@@ -7,7 +7,7 @@ const WorkSkeleton = () => {
           className='max-w-md animate-pulse bg-white m-3 py-14 my-10 text-center shadow-xl rounded-3xl flex flex-col items-center'>
           <div className='flex items-center justify-center w-full h-48 rounded-sm'>
             <svg
-              className='w-30 h-30 text-gray-200 dark:text-gray-600'
+              className='w-30 h-30 text-[var(--color-gray-200)] dark:text-[var(--color-gray-600)]'
               aria-hidden='true'
               xmlns='http://www.w3.org/2000/svg'
               fill='currentColor'
@@ -16,9 +16,9 @@ const WorkSkeleton = () => {
             </svg>
           </div>
 
-          <div className='h-2 w-8.5 bg-gray-200 rounded-full max-w-[300px] mb-2.5'></div>
+          <div className='h-2 w-8.5 bg-[var(--color-gray-200)] rounded-full max-w-[300px] mb-2.5'></div>
 
-          <div className='h-2 w-8.5 bg-gray-200 rounded-full max-w-[300px] mt-5'></div>
+          <div className='h-2 w-8.5 bg-[var(--color-gray-200)] rounded-full max-w-[300px] mt-5'></div>
 
           <span className='sr-only'>Loading...</span>
         </div>

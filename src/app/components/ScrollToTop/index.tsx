@@ -31,18 +31,18 @@ export default function ScrollToTop() {
           <Link
             href='https://wa.me/923236989128' // <-- your WhatsApp number
             target='_blank'
-            className='flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full w-12 h-12 shadow-lg transition duration-300'
+            className='flex items-center justify-center bg-[var(--color-green-500)] hover:bg-[var(--color-green-600)] text-white rounded-full w-12 h-12 shadow-lg transition duration-300'
             aria-label='Chat on WhatsApp'>
             <Icon icon='mdi:whatsapp' width={28} height={28} />
           </Link>
 
           {/* ✅ Scroll to Top Button */}
-          <div
+          <button
             onClick={scrollToTop}
             aria-label='scroll to top'
             className='back-to-top flex h-10 w-10 cursor-pointer items-center justify-center rounded-md bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-primary/60'>
             <span className='mt-[6px] h-3 w-3 rotate-45 border-l border-t border-white'></span>
-          </div>
+          </button>
         </div>
       )}
     </div>

@@ -88,7 +88,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ items }) => {
                 icon='twemoji:star'
                 width='18'
                 className={`mr-1 ${
-                  i < validRating ? 'text-yellow-500' : 'text-gray-300'
+                  i < validRating ? 'text-[var(--color-yellow-500)]' : 'text-[var(--color-gray-300)]'
                 }`}
               />
             ))}
