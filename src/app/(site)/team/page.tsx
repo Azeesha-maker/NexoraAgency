@@ -216,7 +216,7 @@ export default function TeamPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-center">
+          <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-3 justify-center">
             <div className="hidden lg:block" /> {/* Spacer */}
             {boys.map((m, i) => TeamCard(m, girls.length + i))}
             <div className="hidden lg:block" /> {/* Spacer */}
