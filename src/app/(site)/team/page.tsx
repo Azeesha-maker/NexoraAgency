@@ -135,7 +135,7 @@ export default function TeamPage() {
           src={member.photo}
           alt={member.name}
           fill
-          className="object-cover transition-transform duration-300 group-hover:scale-110"
+          className="object-contain transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
         <p className="absolute bottom-4 left-4 right-4 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
