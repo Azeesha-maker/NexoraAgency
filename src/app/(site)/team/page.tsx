@@ -44,7 +44,7 @@ const girls: TeamMember[] = [
     funFact: "Can debug in her sleep and still wake up with a smile",
   },
   {
-    name: "Anzalna Ansari",
+    name: "Anzalna",
     role: "UI/UX Designer",
     photo: "images\team\Anzalna.png",
     bio: "Anzalna transforms complex ideas into intuitive, delightful digital experiences.",
@@ -443,7 +443,7 @@ export default function TeamPage(): JSX.Element {
         whileInView="visible"
         viewport={{ once: true, amount: 0.12 }}
         transition={{ duration: 0.7 }}
-        className="py-24 bg-gradient-to-r from-[var(--color-blue-500)] to-[var(--color-purple-500)] text-white text-center"
+        className="py-24 bg-gradient-to-r from-[var(--color-blue-500)] to-[var(--color-skyblue-500)] text-white text-center"
       >
         <div className="container mx-auto px-6 max-w-5xl">
           <motion.h2
