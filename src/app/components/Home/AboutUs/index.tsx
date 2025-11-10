@@ -56,8 +56,9 @@ const Aboutus = () => {
               : about.map((item, i) => (
                   <div
                     key={i}
-                    className='hover:bg-darkmode bg-white rounded-3xl p-6 sm:p-8 shadow-xl group 
-                               w-[90%] sm:w-[95%] mx-auto transition-all duration-300'>
+                  className='hover:bg-darkmode bg-white rounded-3xl p-6 sm:p-8 
+                   shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.2)] 
+                   hover:scale-[1.03] group w-[90%] sm:w-[95%] mx-auto transition-all duration-500 ease-in-out'>
                     <h5 className='group-hover:text-white mb-4 text-lg sm:text-xl font-semibold text-center sm:text-left'>
                       {item.heading}
                     </h5>
@@ -72,8 +73,8 @@ const Aboutus = () => {
                       {item.paragraph}
                     </p>
                     <Link
-                      href='#'
-                      className='text-[15px] sm:text-[16px] font-semibold text-primary hover:underline flex items-center justify-center sm:justify-start'>
+                      href={item.href}
+                      className='text-[15px] sm:text-[16px] font-semibold text-black group-hover:text-white flex items-center justify-center sm:justify-start'>
                       {item.link}
                       <Icon
                         icon='tabler:chevron-right'
