@@ -48,9 +48,8 @@ const Header = () => {
         {/* 🔹 Desktop Nav Links */}
         <nav className='hidden lg:flex items-center space-x-8 font-medium text-[var(--color-gray-700)]'>
           <Link href="/services" className="hover:text-primary transition">
-  Services
-</Link>
-
+            Services
+          </Link>
           <Link href='/projects' className='hover:text-primary transition'>
             Projects
           </Link>
@@ -62,13 +61,14 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* 🔹 CTA Button (Desktop) */}
+        {/* 🔹 CTA Button (Desktop) - CHANGED TO VIDEO BUTTON */}
         <div className='hidden lg:block'>
           <Link
-            href='#contact'
-            className='bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-darkmode transition'
+            href='/video'  // Yahan video page ka link dal dena
+            className='bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-darkmode transition flex items-center gap-2'
           >
-            Get a Quote
+            <Icon icon="mdi:play-circle" className="text-lg" />
+            Watch Our Story
           </Link>
         </div>
 
@@ -91,20 +91,22 @@ const Header = () => {
         <div className='p-6'>
           <Logo />
           <nav className='flex flex-col space-y-6 mt-10 text-lg'>
-           <Link href="/services" className="hover:text-primary transition">
-  Services
-</Link>
-
+            <Link href="/services" className="hover:text-primary transition" onClick={() => setNavbarOpen(false)}>
+              Services
+            </Link>
             <Link href='/projects' onClick={() => setNavbarOpen(false)}>Projects</Link>
             <Link href='/team' onClick={() => setNavbarOpen(false)}>Team</Link>
             <Link href='/contact' onClick={() => setNavbarOpen(false)}>Contact</Link>
           </nav>
+          
+          {/* 🔹 Mobile CTA Button - CHANGED TO VIDEO BUTTON */}
           <Link
-            href='#contact'
+            href='/video'  // Yahan video page ka link dal dena
             onClick={() => setNavbarOpen(false)}
-            className='block mt-10 bg-primary text-center py-3 rounded-full text-white font-semibold hover:bg-white hover:text-darkmode transition'
+            className='block mt-10 bg-primary text-center py-3 rounded-full text-white font-semibold hover:bg-white hover:text-darkmode transition flex items-center justify-center gap-2'
           >
-            Get a Quote
+            <Icon icon="mdi:play-circle" className="text-lg" />
+            Watch Our Story
           </Link>
         </div>
       </div>

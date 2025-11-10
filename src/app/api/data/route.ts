@@ -50,32 +50,32 @@ const Aboutdata: aboutdata[] = [
 // work-data
 const WorkData: workdata[] = [
   {
-    profession: 'IT Role , Front-End',
+    profession: 'Full Stack developer',
     name: 'Azeesha Ali',
     imgSrc: '/images/team/Azeesha.png',
   },
   {
     profession: 'UI/UX Designer',
-    name: 'Anzalna',
+    name: 'Anzalna Ansari',
     imgSrc: '/images/team/Anzalna.png',
   },
   {
-    profession: 'DevOps Engineer',
+    profession: 'Full Stack & AI Developer',
     name: 'Aniqa Khan',
     imgSrc: '/images/team/Aniqa.png',
   },
   {
-    profession: 'Frontend Developer',
-    name: 'Simra Ahmed',
+    profession: 'Full Stack Developer',
+    name: 'Simra Malik',
     imgSrc: '/images/team/Simra.png',
   },
   {
     profession: 'Full Stack Developer',
-    name: 'Saqib Khan',
+    name: 'Muhammad Saqib',
     imgSrc: '/images/team/Saqib.png',
   },
   {
-    profession: 'Backend Engineer',
+    profession: 'full Stack Developer',
     name: 'Muhammad Mursaleen',
     imgSrc: '/images/team/Mursaleen.png',
   },
