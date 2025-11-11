@@ -34,20 +34,20 @@ const Dedicated = () => {
             </h2>
 
             <p className='text-base text-black/60 mt-4 text-center lg:text-start'>
-               We transform your vision into digital reality through innovative solutions 
-               that drive growth and engagement. Our team combines cutting edge technology 
-               with creative strategy to build platforms that not only look exceptional 
-               but deliver measurable results. From concept to launch, we&apos;re committed 
-               to making your digital success our greatest achievement.
+              We transform your vision into digital reality through innovative solutions
+              that drive growth and engagement. Our team combines cutting edge technology
+              with creative strategy to build platforms that not only look exceptional
+              but deliver measurable results. From concept to launch, we&apos;re committed
+              to making your digital success our greatest achievement.
             </p>
-              
-              <div className='text-center lg:text-start mt-8'>
-  <Link
-    href='/contact'
-    className='text-xl py-4 px-10 font-semibold text-white rounded-full duration-300 bg-primary border border-primary hover:bg-darkmode hover:border-darkmode inline-block'>
-    Let's Collaborate
-  </Link>
-</div>
+
+            <div className='text-center lg:text-start mt-8'>
+              <Link
+                href='/contact'
+                className='text-xl py-4 px-10 font-semibold text-white rounded-full duration-300 bg-primary border border-primary hover:bg-darkmode hover:border-darkmode inline-block'>
+                Let's Collaborate
+              </Link>
+            </div>
             <h5 className='mt-8 text-center lg:text-start font-medium text-black'>
               Muhammad Saqib , CEO
             </h5>

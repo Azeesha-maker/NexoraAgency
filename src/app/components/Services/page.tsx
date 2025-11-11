@@ -250,9 +250,9 @@ export default function ServicesPage() {
               <p className="text-blue-100 text-lg">Simple, transparent, and collaborative</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {[
-                { icon: 'tabler:message', title: 'Consultation', desc: 'We discuss your requirements and goals' },
+                { icon: 'tabler:message', title: 'Consultation', desc: 'We discuss your requirements & goals' },
                 { icon: 'tabler:palette', title: 'Design', desc: 'Create wireframes and prototypes' },
                 { icon: 'tabler:code', title: 'Development', desc: 'Build with modern technologies' },
                 { icon: 'tabler:rocket', title: 'Launch', desc: 'Deploy and provide support' }
@@ -261,9 +261,9 @@ export default function ServicesPage() {
                   <div className="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-all duration-300 border border-white/30">
                     <Icon icon={step.icon} width="28" />
                   </div>
-                  <div className="bg-white/10 rounded-2xl p-4 group-hover:bg-white/20 transition-all duration-300 border border-white/20 backdrop-blur-sm">
+                  <div className="bg-white/10 rounded-2xl p-2 py-2 group-hover:bg-white/20 transition-all duration-300 border border-white/20 backdrop-blur-sm">
                     <h3 className="font-bold text-lg mb-2 text-white">{step.title}</h3>
-                    <p className="text-blue-100 text-sm">{step.desc}</p>
+                    <p className="text-blue-100 text-sm pb-2">{step.desc}</p>
                   </div>
                 </div>
               ))}
