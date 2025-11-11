@@ -199,10 +199,10 @@ export default function ProjectsPage() {
                     setActiveCategory(category);
                     setVisibleProjects(6);
                   }}
-                  className={`px-6 py-3 rounded-2xl font-medium transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-2xl font-medium transition-all duration-300 cursor-pointer ${
                     activeCategory === category
                       ? 'bg-primary text-white shadow-lg shadow-blue-500/25'
-                      : 'bg-white text-gray-600 hover:bg-blue-50 hover:text-blue-600 border border-gray-200'
+                      : 'bg-white text-gray-600 hover:bg-blue-50 hover:text-primary border border-gray-200'
                   }`}
                 >
                   {category}
@@ -215,7 +215,7 @@ export default function ProjectsPage() {
           <div className="text-center mb-8">
             <p className="text-gray-600">
               Showing {projectsToShow.length} of {filteredProjects.length} projects 
-              in <span className="font-semibold text-blue-600">{activeCategory}</span>
+              in <span className="font-semibold text-primary">{activeCategory}</span>
             </p>
           </div>
 
@@ -257,7 +257,7 @@ export default function ProjectsPage() {
                     <div className="text-center">
                       <Link
                         href={project.link}
-                        className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full text-blue-700 font-semibold shadow-lg hover:bg-blue-50 hover:scale-105 transition-all duration-300"
+                        className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full text-primary font-semibold shadow-lg hover:bg-blue-50 hover:scale-105 transition-all duration-300"
                       >
                         View Project
                         <Icon icon="tabler:arrow-right" width="18" />
@@ -268,20 +268,18 @@ export default function ProjectsPage() {
 
                 {/* Content Section */}
                 <div className="p-6">
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-sm"
+                        className="text-xs font-medium px-3 py-1.5 rounded-full bg-primary text-white shadow-sm"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-2">
@@ -292,7 +290,7 @@ export default function ProjectsPage() {
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <Link
                       href={project.link}
-                      className="flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300 text-sm"
+                      className="flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all duration-300 text-sm"
                     >
                       View Details
                       <Icon icon="tabler:arrow-right" width="16" className="group-hover:translate-x-1 transition-transform" />
@@ -337,7 +335,7 @@ export default function ProjectsPage() {
           {/* All Projects Loaded Message */}
           {visibleProjects >= filteredProjects.length && filteredProjects.length > 0 && (
             <div className="text-center mt-12">
-              <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-6 py-3 rounded-2xl">
+              <div className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-2xl">
                 <Icon icon="tabler:check" width="20" />
                 All {filteredProjects.length} projects loaded
               </div>
