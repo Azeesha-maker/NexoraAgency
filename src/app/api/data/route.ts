@@ -55,7 +55,7 @@ const WorkData: workdata[] = [
     imgSrc: '/images/team/Azeesha.png',
   },
   {
-    profession: 'UI/UX Designer',
+    profession: 'UI/UX Designer & SEO Specialist',
     name: 'Anzalna Ansari',
     imgSrc: '/images/team/Anzalna.png',
   },
@@ -75,7 +75,7 @@ const WorkData: workdata[] = [
     imgSrc: '/images/team/Saqib.png',
   },
   {
-    profession: 'full Stack Developer',
+    profession: 'Full Stack Developer',
     name: 'Muhammad Mursaleen',
     imgSrc: '/images/team/Mursaleen.png',
   },

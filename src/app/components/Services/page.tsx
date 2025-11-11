@@ -17,7 +17,6 @@ export default function ServicesPage() {
       features: ['Custom project ideas', 'Full development (Frontend + Backend)', 'Database & documentation support', 'Free deployment guidance'],
       tag: '50% Off for Students',
       cta: 'Build My FYP Now',
-      isFYP: true,
       icon: 'tabler:school',
     },
     {
@@ -81,10 +80,10 @@ export default function ServicesPage() {
   const faqs = [
     {
       question: 'How do I get started with a new project?',
-      answer: 'You can contact us via the form or book a free consultation. We’ll discuss your goals, budget, and timeline.'
+      answer: 'You can contact us via the form or book a free consultation. We\'ll discuss your goals, budget, and timeline.'
     },
     {
-      question: 'What if I already have a website  can you redesign or improve it?',
+      question: 'What if I already have a website - can you redesign or improve it?',
       answer: 'Absolutely! We specialize in redesigns that modernize your current brand.'
     },
     {
@@ -109,13 +108,13 @@ export default function ServicesPage() {
     },
     {
       question: 'Can you handle urgent projects or tight deadlines?',
-      answer: 'Yes, we offer express service for time-sensitive projectsn.'
+      answer: 'Yes, we offer express service for time-sensitive projects.'
     }
   ];
 
   const stats = [
     { number: '100+', label: 'Projects Completed', icon: 'tabler:briefcase' },
-    { number: '50+', label: 'Happy Clients', icon: 'tabler:users' },
+    { number: '80+', label: 'Happy Clients', icon: 'tabler:users' },
     { number: '98%', label: 'Client Satisfaction', icon: 'tabler:heart' },
     { number: '24/7', label: 'Support Available', icon: 'tabler:headset' }
   ];
@@ -126,15 +125,15 @@ export default function ServicesPage() {
 
         {/* Hero Section */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6 mt-10">
             <Icon icon="tabler:star" width="16" />
             Trusted by 50+ Companies & Students
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold mt-3 text-black leading-tight">
-            Solutions That <br />Scale With You
+            Solutions That Scale With You
           </h1>
           <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-xl leading-relaxed">
-            From idea to launch  fast, reliable, and built to grow. We transform your vision into 
+            From idea to launch - fast, reliable, and built to grow. We transform your vision into 
             high-performance digital experiences.
           </p>
           
@@ -154,27 +153,24 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Service Cards Grid */}
+        {/* Service Cards Grid - ALL CARDS WITH SAME BLUE BACKGROUND */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-20">
           {services.map((service) => (
             <div
               key={service.id}
-              className={`service-card relative group rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 flex flex-col h-full min-h-[500px]
-                ${service.isFYP ? 'bg-primary' : 'bg-white'}`}
+              className="service-card relative group rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-blue-200 flex flex-col h-full min-h-[500px] bg-primary"
             >
 
-              {/* FYP Card Background Pattern */}
-              {service.isFYP && (
-                <div 
-                  className="absolute inset-0 opacity-20"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-                    backgroundSize: '200px 200px'
-                  }}
-                ></div>
-              )}
+              {/* Blue Background Pattern - FOR ALL CARDS */}
+              <div 
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+                  backgroundSize: '200px 200px'
+                }}
+              ></div>
 
-              {/* Tag Badge */}
+              {/* Tag Badge - Only for FYP */}
               {service.tag && (
                 <span className="absolute top-3 right-3 bg-white text-primary text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10">
                   {service.tag}
@@ -187,34 +183,24 @@ export default function ServicesPage() {
                 {/* Top Content - Flexible */}
                 <div className="flex-1">
                   {/* Icon */}
-                  <div className={`inline-flex p-3 rounded-2xl mb-4 ${
-                    service.isFYP 
-                      ? 'bg-white/20 text-white' 
-                      : 'bg-primary/10 text-primary'
-                  }`}>
+                  <div className="inline-flex p-3 rounded-2xl mb-4 bg-white/20 text-white border border-white/30">
                     <Icon icon={service.icon} width="24" />
                   </div>
 
-                  <h3 className={`text-xl font-bold mb-3 leading-tight ${
-                    service.isFYP ? 'text-white' : 'text-black'
-                  }`}>
+                  <h3 className="text-xl font-bold mb-3 leading-tight text-white">
                     {service.title}
                   </h3>
 
-                  <p className={`mb-4 text-sm leading-relaxed ${
-                    service.isFYP ? 'text-blue-100' : 'text-gray-600'
-                  }`}>
+                  <p className="mb-4 text-sm leading-relaxed text-blue-100">
                     {service.description}
                   </p>
 
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, i) => (
-                      <li key={i} className={`flex items-center gap-2 text-sm ${
-                        service.isFYP ? 'text-blue-100' : 'text-gray-700'
-                      }`}>
+                      <li key={i} className="flex items-center gap-2 text-sm text-blue-100">
                         <Icon 
                           icon="tabler:check" 
-                          className={service.isFYP ? "text-white" : "text-primary"} 
+                          className="text-white" 
                           width="16" 
                         />
                         {feature}
@@ -224,26 +210,18 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Buttons - Fixed at Bottom */}
-                <div className="mt-auto pt-4 border-t border-gray-200/50">
+                <div className="mt-auto pt-4 border-t border-white/30">
                   <div className="flex flex-col gap-3">
                     <button
                       onClick={() => router.push('/contact')}
-                      className={`w-full px-4 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md cursor-pointer text-center ${
-                        service.isFYP
-                          ? 'bg-white text-primary hover:bg-gray-50'
-                          : 'bg-primary text-white hover:bg-primary/90'
-                      }`}
+                      className="w-full px-4 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md cursor-pointer text-center bg-white text-primary hover:bg-gray-50"
                     >
                       {service.cta}
                     </button>
 
                     <Link
                       href="/contact"
-                      className={`flex items-center justify-center gap-2 text-sm font-medium transition-all py-2 ${
-                        service.isFYP 
-                          ? 'text-blue-100 hover:text-white' 
-                          : 'text-primary hover:text-primary/80'
-                      }`}
+                      className="flex items-center justify-center gap-2 text-sm font-medium transition-all py-2 text-blue-100 hover:text-white"
                     >
                       Get Free Consultation
                       <Icon icon="tabler:arrow-right" width="16" />
@@ -255,7 +233,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        {/* Process Section with Professional Background */}
+        {/* Process Section */}
         <div className="relative rounded-3xl p-8 sm:p-12 text-white mb-20 overflow-hidden bg-primary">
           
           {/* Circuit Board Pattern */}
@@ -284,7 +262,7 @@ export default function ServicesPage() {
                     <Icon icon={step.icon} width="28" />
                   </div>
                   <div className="bg-white/10 rounded-2xl p-4 group-hover:bg-white/20 transition-all duration-300 border border-white/20 backdrop-blur-sm">
-                    <h3 className="font-bold text-lg mb-2">{step.title}</h3>
+                    <h3 className="font-bold text-lg mb-2 text-white">{step.title}</h3>
                     <p className="text-blue-100 text-sm">{step.desc}</p>
                   </div>
                 </div>
@@ -339,14 +317,14 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* CTA Section with Professional Background */}
+        {/* CTA Section */}
         <div className="text-center rounded-3xl p-8 sm:p-12 relative overflow-hidden bg-primary">
           
           {/* Binary Code Pattern */}
           <div 
             className="absolute inset-0 opacity-15"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='8' fill='%23ffffff' opacity='0.3'%3E1010%3C/text%3E%3Ctext x='10' y='35' font-family='monospace' font-size='8' fill='%23ffffff' opacity='0.3'%3E0101%3C/text%3E%3Ctext x='10' y='50' font-family='monospace' font-size='8' fill='%23ffffff' opacity='0.3'%3E1100%3C/text%3E%3Ctext x='10' y='65' font-family='monospace' font-size='8' fill='%23ffffff' opacity='0.3'%3E0011%3C/text%3E%3Ctext x='10' y='80' font-family='monospace' font-size='8' fill='%23ffffff' opacity='0.3'%3E1001%3C/text%3E%3C/svg%3E")`,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E")`,
               backgroundSize: '80px 80px'
             }}
           ></div>
