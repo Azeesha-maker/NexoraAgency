@@ -15,15 +15,14 @@ const Digital = () => {
                 Who we are
               </p>
               <h2 className='text-white mb-8 leading-tight text-center lg:text-start text-2xl sm:text-3xl lg:text-5xl font-semibold lg:w-full'>
-                We turn ideas into stunning digital experiences.
+                Turning visions into powerful digital realities.
               </h2>
               <p className='text-white/80 text-center lg:text-start mb-8 text-sm sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0'>
-                Our creative team blends design, technology, and strategy to help
-                brands grow and stand out in the digital world.
+                 Our team combines creativity, technology, and strategy to help brands shine online.
               </p>
               <div className='text-center lg:text-start'>
                 <Link
-                  href='#'
+                  href='/services'
                   className='text-lg sm:text-xl font-semibold text-white bg-deep-slate/80 hover:bg-deep-slate py-3 sm:py-4 px-8 sm:px-12 rounded-full transition-all'>
                   Get Started
                 </Link>
@@ -31,14 +30,15 @@ const Digital = () => {
             </div>
           </div>
           {/* COLUMN-2 */}
-          <div className='absolute -bottom-16 -right-20 xl:block hidden'>
-            <Image
-              src='/images/digital/girldoodle.svg'
-              alt='doodle'
-              width={815}
-              height={691}
-            />
-          </div>
+          <div className='absolute top-11 -right-20 xl:block hidden animate-slideIn'>
+        <Image
+        src='/images/digital/turnIdea.png'
+        alt='idea'
+        width={815}
+        height={691}
+        priority={true}
+       />
+        </div>
         </div>
       </div>
     </section>

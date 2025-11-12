@@ -102,7 +102,7 @@ const Featured = () => {
 
   return (
     <section className="relative bg-deepSlate dark:bg-darkmode  after:absolute after:w-1/4 after:h-1/4 after:bg-[url('/images/wework/vector.svg')]  after:top-72 after:right-0 after:bg-no-repeat">
-      <div className='container mx-auto max-w-7xl px-4 relative'>
+      <div className='mx-auto max-w-7xl px-4 relative'>
         <div className='text-center overflow-hidden'>
           <h3 className='my-5'>Featured works.</h3>
         </div>

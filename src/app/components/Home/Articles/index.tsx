@@ -74,32 +74,37 @@ const Articles = () => {
                 <ArticlesSkeleton key={i} />
               ))
             : articles.map((items, i) => (
-                <div key={i}>
-                  <div className='bg-white m-3 px-3 pt-3 pb-12 my-10 shadow-lg rounded-4xl relative'>
-                    <Image
-                      src={items.imgSrc}
-                      alt='gaby'
-                      width={389}
-                      height={262}
-                      className='inline-block m-auto rounded-3xl'
-                    />
-                    <Link
-                      href='/'
-                      className='absolute text-base bg-primary text-white hover:bg-black hover:shadow-xl py-3 px-6 rounded-full top-56 right-11'>
-                      {items.time} read
-                    </Link>
-                    <h5 className='font-bold pt-6'>{items.heading}</h5>
-                    <h5 className='font-bold pt-1'>{items.heading2}</h5>
-                    <div>
-                      <h3 className='text-sm font-normal pt-6 pb-2 text-black/75 dark:text-white/75'>
-                        {items.name}
-                      </h3>
-                      <h3 className='text-sm font-normal pb-1 text-black/75 dark:text-white/75'>
-                        {items.date}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
+<div key={i}>
+  <div className='bg-white m-3 px-3 pt-3 pb-12 my-10 shadow-lg rounded-4xl relative'>
+    {/* Image with Time Badge */}
+    <div className='relative mb-4'>
+      <Image
+        src={items.imgSrc}
+        alt={items.heading}
+        width={400}
+        height={250}
+        className='w-full h-48 object-cover rounded-xl'
+      />
+      {/* Time Badge - Image ke upper */}
+      <div className='absolute top-3 right-3'>
+        <span className='text-sm bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-full font-medium'>
+          {items.time} read
+        </span>
+      </div>
+    </div>
+    
+    <h5 className='font-bold pt-6'>{items.heading}</h5>
+    <h5 className='font-bold pt-1'>{items.heading2}</h5>
+    <div>
+      <h3 className='text-sm font-normal pt-6 pb-2 text-black/75 dark:text-white/75'>
+        {items.name}
+      </h3>
+      <h3 className='text-sm font-normal pb-1 text-black/75 dark:text-white/75'>
+        {items.date}
+      </h3>
+    </div>
+  </div>
+</div>
               ))}
         </Slider>
       </div>

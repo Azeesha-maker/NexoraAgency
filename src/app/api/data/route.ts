@@ -26,6 +26,7 @@ const Aboutdata: aboutdata[] = [
     paragraph:
       'We are a modern web agency passionate about building creative and functional digital experiences. Our mission is to help businesses grow through clean design, strong development, and smart strategy.',
     link: 'Discover More',
+     href: '/projects',
   },
   {
     heading: 'What We Do',
@@ -33,6 +34,7 @@ const Aboutdata: aboutdata[] = [
     paragraph:
       'We specialize in web design, web app development, branding, and digital marketing  everything your brand needs to shine online and stand out from the crowd.',
     link: 'Explore Services',
+    href: '/services'
   },
   {
     heading: 'Why Choose Us',
@@ -40,6 +42,7 @@ const Aboutdata: aboutdata[] = [
     paragraph:
       'Our team blends creativity, technology, and strategy to deliver custom solutions that are fast, responsive, and result-driven  making your online presence unforgettable.',
     link: 'Get Started',
+    href: '/contact',
   },
 ]
 
@@ -47,32 +50,32 @@ const Aboutdata: aboutdata[] = [
 // work-data
 const WorkData: workdata[] = [
   {
-    profession: 'IT Role , Front-End',
+    profession: 'Full Stack developer',
     name: 'Azeesha Ali',
     imgSrc: '/images/team/Azeesha.png',
   },
   {
-    profession: 'UI/UX Designer',
-    name: 'Anzalna',
+    profession: 'UI/UX Designer & SEO Specialist',
+    name: 'Anzalna Ansari',
     imgSrc: '/images/team/Anzalna.png',
   },
   {
-    profession: 'DevOps Engineer',
+    profession: 'Full Stack & AI Developer',
     name: 'Aniqa Khan',
     imgSrc: '/images/team/Aniqa.png',
   },
   {
-    profession: 'Frontend Developer',
-    name: 'Simra Ahmed',
+    profession: 'Full Stack Developer',
+    name: 'Simra Malik',
     imgSrc: '/images/team/Simra.png',
   },
   {
     profession: 'Full Stack Developer',
-    name: 'Saqib Khan',
+    name: 'Muhammad Saqib',
     imgSrc: '/images/team/Saqib.png',
   },
   {
-    profession: 'Backend Engineer',
+    profession: 'Full Stack Developer',
     name: 'Muhammad Mursaleen',
     imgSrc: '/images/team/Mursaleen.png',
   },
@@ -82,27 +85,27 @@ const WorkData: workdata[] = [
 const FeaturedData: featureddata[] = [
   {
     heading: 'Modern Business Website for a Tech Startup',
-    imgSrc: '/images/featured/feat1.jpg',
+    imgSrc: '/images/featured/img1.jpeg',
   },
   {
     heading: 'E-Commerce Platform with Secure Payment Gateway',
-    imgSrc: '/images/featured/feat5.png',
+    imgSrc: '/images/featured/img2.jpeg',
   },
   {
     heading: 'Custom Portfolio Website for a Creative Designer',
-    imgSrc: '/images/featured/feat6.png',
+    imgSrc: '/images/featured/img3.jpeg',
   },
   {
     heading: 'Mobile App UI/UX Design for a Food Delivery Service',
-    imgSrc: '/images/featured/feat2.jpg',
+    imgSrc: '/images/featured/img4.jpeg',
   },
   {
     heading: 'Real-Time Dashboard for Data Analytics Platform',
-    imgSrc: '/images/featured/feat4.png',
+    imgSrc: '/images/featured/img5.jpeg',
   },
   {
     heading: 'Landing Page Optimization for Marketing Campaign',
-    imgSrc: '/images/featured/feat7.png',
+    imgSrc: '/images/featured/img6.jpeg',
   },
 ]
 
@@ -187,57 +190,57 @@ const TestimonialsData: testimonials[] = [
 ]
 
 
-// artical data
 const ArticlesData: articles[] = [
   {
-    time: '5 min',
-    heading: 'We Launch Delia',
-    heading2: 'Webflow this Week!',
-    name: 'Published on Startupon',
-    date: 'february 19, 2025',
-    imgSrc: '/images/articles/article.png',
+    time: '4 min',
+    heading: 'Redesigning Brand',
+    heading2: 'Our Creative Process Unveiled',
+    name: 'Published by CreativeWave Agency',
+    date: 'November 9, 2025',
+    imgSrc: '/images/articles/article1.jpeg',
   },
   {
     time: '5 min',
-    heading: 'We Launch Delia',
-    heading2: 'Webflow this Week!',
-    name: 'Published on Startupon',
-    date: 'february 19, 2025',
-    imgSrc: '/images/articles/article2.png',
+    heading: 'Website Launch Success',
+    heading2: 'How We Built a High-Converting Site',
+    name: 'Written by Alex & Sarah - UI/UX Designers',
+    date: 'November 8, 2025',
+    imgSrc: '/images/articles/article2.jpeg',
+  },
+  {
+    time: '3 min',
+    heading: 'Team Collaboration',
+    heading2: 'Creative Meetings That Spark Ideas',
+    name: 'Published by CreativeWave Agency',
+    date: 'November 7, 2025',
+    imgSrc: '/images/articles/article3.jpeg',
+  },
+  {
+    time: '4 min',
+    heading: 'Crafting Modern UI',
+    heading2: 'From Concept to Pixel Perfect',
+    name: 'Written by Mia & John - UI Designers',
+    date: 'November 6, 2025',
+    imgSrc: '/images/articles/article4.jpeg',
+  },
+  {
+    time: '6 min',
+    heading: 'Boosting Brand Visit',
+    heading2: 'Digital Marketing Strategies That Work',
+    name: 'Published by CreativeWave Agency',
+    date: 'November 5, 2025',
+    imgSrc: '/images/articles/article5.jpeg',
   },
   {
     time: '5 min',
-    heading: 'We Launch Delia',
-    heading2: 'Webflow this Week!',
-    name: 'Published on Startupon',
-    date: 'february 19, 2025',
-    imgSrc: '/images/articles/article3.png',
+    heading: 'Product Launch',
+    heading2: 'How Our Team Delivered Excellence',
+    name: 'Written by Sarah & Alex - Project Managers',
+    date: 'November 4, 2025',
+    imgSrc: '/images/articles/article6.jpeg',
   },
-  {
-    time: '5 min',
-    heading: 'We Launch Delia',
-    heading2: 'Webflow this Week!',
-    name: 'Published on Startupon',
-    date: 'february 19, 2025',
-    imgSrc: '/images/articles/article.png',
-  },
-  {
-    time: '5 min',
-    heading: 'We Launch Delia',
-    heading2: 'Webflow this Week!',
-    name: 'Published on Startupon',
-    date: 'february 19, 2025',
-    imgSrc: '/images/articles/article2.png',
-  },
-  {
-    time: '5 min',
-    heading: 'We Launch Delia',
-    heading2: 'Webflow this Week!',
-    name: 'Published on Startupon',
-    date: 'february 19, 2025',
-    imgSrc: '/images/articles/article3.png',
-  },
-]
+];
+
 
 
 

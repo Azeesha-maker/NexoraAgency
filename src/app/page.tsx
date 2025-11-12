@@ -6,6 +6,7 @@ import Digital from '@/app/components/Home/Digital'
 import Beliefs from '@/app/components/Home/Beliefs'
 import Work from '@/app/components/Home/Work'
 import Team from '@/app/components/Home/Team'
+import GrowingSection from './components/Home/GrowingSection'
 import Featured from '@/app/components/Home/Featured'
 import Manage from '@/app/components/Home/Manage'
 import FAQ from '@/app/components/Home/FAQ'
@@ -29,6 +30,7 @@ export default function Home() {
       <Beliefs />
       <Work />
       <Team />
+      <GrowingSection />
       <Featured />
       <Manage />
       <FAQ />

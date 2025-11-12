@@ -9,7 +9,7 @@ const Team = () => {
           Our team believes you deserve only the best.
         </h2>
         <h5 className='font-medium text-center pt-10 text-black/50 max-w-3xl mx-auto'>
-          We’re a passionate group of designers, developers, and strategists dedicated 
+          We&apos;re a passionate group of designers, developers, and strategists dedicated 
           to turning ideas into digital experiences that inspire and deliver results.
         </h5>
         <div className='grid grid-cols-1 mt-16'>
