@@ -13,7 +13,6 @@ import FAQ from '@/app/components/Home/FAQ'
 import Testimonial from '@/app/components/Home/Testimonials'
 import Articles from '@/app/components/Home/Articles'
 import Join from '@/app/components/Home/Joinus'
-import Insta from '@/app/components/Home/Insta'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -37,7 +36,6 @@ export default function Home() {
       <Testimonial />
       <Articles />
       <Join />
-      <Insta />
     </main>
   )
 }

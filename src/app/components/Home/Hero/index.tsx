@@ -64,7 +64,7 @@ const Hero = () => {
           {/* Right Image */}
           <div className='xl:col-span-7 lg:col-span-6 lg:block hidden'>
             <Image
-              src='/images/hero/banner-image.png'
+              src='/images/hero/Hero.png'
               alt='Creative web agency banner'
               width={600}
               height={600}
