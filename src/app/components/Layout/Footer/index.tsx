@@ -29,7 +29,7 @@ const Footer = () => {
         <div className='grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8'>
           {/* COLUMN-1 */}
           <div className='col-span-4'>
-            <img src='/images/bg.png' alt='Nexora Agency Logo' className='h-30 w-35 mb-6 rounded-2xl' />
+            <img src='/images/bg.png' alt='Nexora Agency Logo' className='h-30 w-35 mb-6 rounded-full' />
             <div className='flex items-center gap-4'>
               <div className='footer-icons'>
                 <Link href='https://facebook.com'>
