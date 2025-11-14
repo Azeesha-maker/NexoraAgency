@@ -29,7 +29,7 @@ export default function ScrollToTop() {
         <div className='flex flex-col sm:flex-row items-center gap-3'>
           {/* ✅ WhatsApp Button - now visible on all screens */}
           <Link
-            href='https://wa.me/923236989128' // <-- your WhatsApp number
+            href='https://wa.me/923003523661' // <-- your WhatsApp number
             target='_blank'
             className='flex items-center justify-center bg-[var(--color-green-500)] hover:bg-[var(--color-green-600)] text-white rounded-full w-12 h-12 shadow-lg transition duration-300'
             aria-label='Chat on WhatsApp'>
