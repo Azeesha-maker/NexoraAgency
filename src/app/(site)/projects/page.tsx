@@ -175,10 +175,11 @@ export default function ProjectsPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Icon icon="tabler:star" width="16" />
-              Featured Projects
-            </div>
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mt-4 sm:mt-6 md:mt-8 lg:mt-12 mb-8">
+  <Icon icon="tabler:star" width="16" />
+  Featured Projects
+</div>
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
               Our Creative
               <span className="block bg-primary bg-clip-text text-transparent">
