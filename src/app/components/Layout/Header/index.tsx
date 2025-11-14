@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 const Header: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
   const [sticky, setSticky] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
   const mobileMenuRef = useRef<HTMLDivElement | null>(null)
   const pathname = usePathname()
 
@@ -44,16 +45,22 @@ const Header: React.FC = () => {
   // Close on Escape
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setNavbarOpen(false)
+      if (e.key === 'Escape') {
+        if (showVideo) {
+          setShowVideo(false)
+        } else {
+          setNavbarOpen(false)
+        }
+      }
     }
     document.addEventListener('keydown', handleKey)
     return () => document.removeEventListener('keydown', handleKey)
-  }, [])
+  }, [showVideo])
 
-  // Lock body scroll when menu open
+  // Lock body scroll when menu open or video open
   useEffect(() => {
     if (typeof window === 'undefined') return
-    if (navbarOpen) {
+    if (navbarOpen || showVideo) {
       document.documentElement.classList.add('overflow-hidden')
       document.body.classList.add('overflow-hidden')
     } else {
@@ -64,7 +71,18 @@ const Header: React.FC = () => {
       document.documentElement.classList.remove('overflow-hidden')
       document.body.classList.remove('overflow-hidden')
     }
-  }, [navbarOpen])
+  }, [navbarOpen, showVideo])
+
+  // Video close function
+  const closeVideo = () => {
+    setShowVideo(false)
+    // Pause video when closing
+    const video = document.querySelector('video') as HTMLVideoElement
+    if (video) {
+      video.pause()
+      video.currentTime = 0
+    }
+  }
 
   return (
     <>
@@ -90,13 +108,13 @@ const Header: React.FC = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Link
-              href="/video"
+            <button
+              onClick={() => setShowVideo(true)}
               className="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-darkmode transition flex items-center gap-2"
             >
               <Icon icon="mdi:play-circle" className="text-lg" />
               Watch Our Story
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Toggle */}
@@ -129,7 +147,7 @@ const Header: React.FC = () => {
         role="dialog"
         aria-modal="true"
       >
-        <div className="p-6 pt-20"> {/* pt-20 so header doesn't overlap visual */}
+        <div className="p-6 pt-20">
           <div className="flex items-center justify-between">
             <Logo />
             <button
@@ -148,16 +166,50 @@ const Header: React.FC = () => {
             <Link href="/contact" onClick={() => setNavbarOpen(false)} className="hover:text-primary transition">Contact</Link>
           </nav>
 
-          <Link
-            href="/video"
-            onClick={() => setNavbarOpen(false)}
-            className="block mt-10 bg-primary text-center py-3 rounded-full text-white font-semibold hover:bg-white hover:text-darkmode transition flex items-center justify-center gap-2"
+          <button
+            onClick={() => {
+              setNavbarOpen(false)
+              setShowVideo(true)
+            }}
+            className="w-full mt-10 bg-primary text-center py-3 rounded-full text-white font-semibold hover:bg-white hover:text-darkmode transition flex items-center justify-center gap-2"
           >
             <Icon icon="mdi:play-circle" className="text-lg" />
             Watch Our Story
-          </Link>
+          </button>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div 
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[70] flex items-center justify-center p-4"
+          onClick={closeVideo}
+        >
+          <div 
+            className="relative max-w-4xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeVideo}
+              className="absolute -top-12 right-0 text-white text-2xl hover:text-gray-300 z-10 bg-black/50 rounded-full p-2"
+            >
+              <Icon icon="mdi:close" />
+            </button>
+            
+            {/* Video Player */}
+            <video 
+              controls 
+              autoPlay 
+              className="w-full rounded-lg shadow-2xl"
+              onEnded={closeVideo}
+            >
+              <source src="/videos/story.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      )}
     </>
   )
 }
